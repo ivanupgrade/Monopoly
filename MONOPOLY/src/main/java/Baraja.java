@@ -9,6 +9,14 @@ public class Baraja {
         this.baraja = baraja;
     }
 
+    public ArrayList<CartaSuerte> getBaraja() {
+        return baraja;
+    }
+
+    public void setBaraja(ArrayList<CartaSuerte> baraja) {
+        this.baraja = baraja;
+    }
+
     public void barajar() {
         Collections.shuffle(baraja);
     }

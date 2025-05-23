@@ -1,11 +1,16 @@
 public class Estacion extends Calle{
 
-    public Estacion(int posicion, String nombre, int alquiler, int precio) {
-        super(posicion, nombre, alquiler, precio);
+    public Estacion(int posicion, String nombre, int precio) {
+        super(posicion, nombre, 25, precio);
     }
 
     @Override
     public void modificarAlquiler(Jugador jugador) {
-        
+        setAlquiler(25);
+        for (Calle calle : jugador.getCalles()){
+            if (calle instanceof Estacion){
+                setAlquiler(getAlquiler()*2);
+            }
+        }
     }
 }

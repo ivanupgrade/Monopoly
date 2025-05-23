@@ -5,8 +5,8 @@ public class Normal extends Calle{
     private int precioEdificio;
     private int[] tablaPrecios;
 
-    public Normal(int posicion, String nombre, int alquiler, int precio, String color, int numCasas, int precioEdificio, int[] tablaPrecios) {
-        super(posicion, nombre, alquiler, precio);
+    public Normal(int posicion, String nombre, int precio, String color, int numCasas, int precioEdificio, int[] tablaPrecios) {
+        super(posicion, nombre, tablaPrecios[numCasas], precio);
         this.color = color;
         this.numCasas = numCasas;
         this.precioEdificio = precioEdificio;
@@ -15,7 +15,7 @@ public class Normal extends Calle{
 
     @Override
     public void modificarAlquiler(Jugador jugador) {
-
+        setAlquiler(tablaPrecios[numCasas]);
     }
 
     public void construirCasa (Jugador jugador){

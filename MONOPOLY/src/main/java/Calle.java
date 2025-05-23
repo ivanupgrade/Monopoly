@@ -14,6 +14,38 @@ public abstract class Calle extends Casilla{
         this.precio = precio;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getAlquiler() {
+        return alquiler;
+    }
+
+    public void setAlquiler(int alquiler) {
+        this.alquiler = alquiler;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    public Jugador getDueño() {
+        return dueño;
+    }
+
+    public void setDueño(Jugador dueño) {
+        this.dueño = dueño;
+    }
+
     @Override
     public void aplicarEfecto(Jugador jugador, Partida partida) {
         if (!jugador.getCalles().contains(this)){
@@ -33,6 +65,7 @@ public abstract class Calle extends Casilla{
                 }
 
             } else {
+                modificarAlquiler(dueño);
                 jugador.setDinero(jugador.getDinero()-alquiler);
                 dueño.setDinero(dueño.getDinero()+alquiler);
             }
