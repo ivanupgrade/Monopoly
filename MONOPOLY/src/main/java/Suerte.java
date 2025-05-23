@@ -1,11 +1,11 @@
-public class Suerte extends Casilla implements Efectos{
+public class Suerte extends Casilla {
 
     public Suerte(int posicion) {
         super(posicion);
     }
 
     @Override
-    public void aplicarEfecto(Partida partida) {
+    public void aplicarEfecto(Jugador jugador, Partida partida) {
 
     }
 }

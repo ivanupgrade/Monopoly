@@ -26,6 +26,46 @@ public class Jugador {
         this.encarcelado = encarcelado;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getPosicion() {
+        return posicion;
+    }
+
+    public void setPosicion(int posicion) {
+        this.posicion = posicion;
+    }
+
+    public int getDinero() {
+        return dinero;
+    }
+
+    public void setDinero(int dinero) {
+        this.dinero = dinero;
+    }
+
+    public ArrayList<Calle> getCalles() {
+        return calles;
+    }
+
+    public void setCalles(ArrayList<Calle> calles) {
+        this.calles = calles;
+    }
+
+    public boolean isEncarcelado() {
+        return encarcelado;
+    }
+
+    public void setEncarcelado(boolean encarcelado) {
+        this.encarcelado = encarcelado;
+    }
+
     public void mover (int num){
         int casilla_fin = posicion + num;
 
@@ -34,7 +74,7 @@ public class Jugador {
         } else {
             casilla_fin -= 28;
             posicion = casilla_fin;
-            System.out.println("Has pasado por la casilla de salida: Recibes 200$");
+            System.out.println("Has pasado por la casilla de salida: Recibes 200€");
             dinero += 200;
         }
     }

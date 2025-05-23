@@ -22,6 +22,54 @@ public class Partida {
         this.turno = turno;
     }
 
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Baraja getMazoRobo() {
+        return mazoRobo;
+    }
+
+    public void setMazoRobo(Baraja mazoRobo) {
+        this.mazoRobo = mazoRobo;
+    }
+
+    public Baraja getMazoDescarte() {
+        return mazoDescarte;
+    }
+
+    public void setMazoDescarte(Baraja mazoDescarte) {
+        this.mazoDescarte = mazoDescarte;
+    }
+
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
+    }
+
+    public void setJugadores(ArrayList<Jugador> jugadores) {
+        this.jugadores = jugadores;
+    }
+
+    public ArrayList<Casilla> getCasillas() {
+        return casillas;
+    }
+
+    public void setCasillas(ArrayList<Casilla> casillas) {
+        this.casillas = casillas;
+    }
+
+    public int getTurno() {
+        return turno;
+    }
+
+    public void setTurno(int turno) {
+        this.turno = turno;
+    }
+
     public void dibujarTablero(){
 
     }

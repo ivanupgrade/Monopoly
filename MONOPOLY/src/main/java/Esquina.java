@@ -1,4 +1,4 @@
-public class Esquina extends Casilla implements Efectos{
+public class Esquina extends Casilla {
 
     private String tipo;
 
@@ -8,7 +8,7 @@ public class Esquina extends Casilla implements Efectos{
     }
 
     @Override
-    public void aplicarEfecto(Partida partida) {
+    public void aplicarEfecto(Jugador jugador, Partida partida) {
 
     }
 }

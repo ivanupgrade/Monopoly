@@ -1,4 +1,4 @@
 public interface Efectos {
 
-    void aplicarEfecto(Partida partida);
+    void aplicarEfecto(Jugador jugador, Partida partida);
 }

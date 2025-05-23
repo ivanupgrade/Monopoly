@@ -13,7 +13,21 @@ public class CartaSuerte implements Efectos{
     }
 
     @Override
-    public void aplicarEfecto(Partida partida) {
+    public void aplicarEfecto(Jugador jugador, Partida partida) {
+        if (tipo.equals("pagar")){
+            jugador.setDinero(jugador.getDinero()-valor);
+        } else if (tipo.equals("cobrar")) {
+            jugador.setDinero(jugador.getDinero()+valor);
+        } else {
+            int mov_casilla = valor- jugador.getPosicion();
+            if (mov_casilla >= 0){
+                jugador.mover(mov_casilla);
+            } else {
+                mov_casilla += 28;
+                jugador.mover(mov_casilla);
+            }
 
+            //TODO: aplicar efecto de la casilla
+        }
     }
 }

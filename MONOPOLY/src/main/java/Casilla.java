@@ -1,4 +1,4 @@
-public abstract class Casilla {
+public abstract class Casilla implements Efectos{
 
     private int posicion;
 
