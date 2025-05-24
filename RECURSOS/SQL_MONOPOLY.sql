@@ -170,6 +170,5 @@ INSERT INTO cartas (tipo, valor, descripcion) VALUES
 ('veA', 5, 'Avanza hasta “Glorieta de Cuatro Caminos”. Si pasas por la salida, cobra 200€.'),
 ('pagar', 15, 'Multa por aparcar en doble fila. Paga 15€.'),
 ('cobrar', 100, 'Recibes una herencia. Cobra 100€.'),
-('pagar', 0, 'Reparaciones en tus propiedades: paga 40€ por casa y 115€ por hotel.'),
 ('cobrar', 75, 'Tus acciones suben de valor. Cobra 75€.'),
 ('veA', 11, 'Ve a “Estación de Goya”. Si pasas por la salida, cobra 200€.');
