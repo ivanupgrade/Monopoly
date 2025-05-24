@@ -21,7 +21,13 @@ public class CartaSuerte implements Efectos{
         } else if (tipo.equals("cobrar")) {
             jugador.setDinero(jugador.getDinero()+valor);
         } else {
-            int mov_casilla = valor- jugador.getPosicion();
+            int mov_casilla;
+            if (valor<0){
+                mov_casilla = jugador.getPosicion()-valor;
+            } else {
+                mov_casilla = valor-jugador.getPosicion();
+            }
+
             if (mov_casilla >= 0){
                 jugador.mover(mov_casilla);
             } else {
