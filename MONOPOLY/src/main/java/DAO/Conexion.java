@@ -7,7 +7,7 @@ public class Conexion {
     private static final String USER = "root";
     private static final String PASS = "";
 
-    public static Connection getConnection() {
+    public static Connection getConexion() {
         try (
                 Connection connection = java.sql.DriverManager.getConnection(DB_URL, USER, PASS)
         ) {

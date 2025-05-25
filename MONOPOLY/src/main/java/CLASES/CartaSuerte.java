@@ -1,3 +1,5 @@
+package CLASES;
+
 public class CartaSuerte implements Efectos{
 
     private int id;

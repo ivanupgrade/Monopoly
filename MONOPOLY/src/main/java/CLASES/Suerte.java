@@ -1,3 +1,5 @@
+package CLASES;
+
 public class Suerte extends Casilla {
 
     public Suerte(int posicion) {

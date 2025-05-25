@@ -1,9 +1,19 @@
+package CLASES;
+
 public class Esquina extends Casilla {
 
     private String tipo;
 
     public Esquina(int posicion, String tipo) {
         super(posicion);
+        this.tipo = tipo;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 

@@ -1,3 +1,5 @@
+package CLASES;
+
 import java.util.Scanner;
 
 public abstract class Calle extends Casilla{
