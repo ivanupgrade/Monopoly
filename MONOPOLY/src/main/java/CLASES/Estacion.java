@@ -1,3 +1,5 @@
+package CLASES;
+
 public class Estacion extends Calle{
 
     public Estacion(int posicion, String nombre, int precio) {
