@@ -5,27 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ea4ecb4-51f8-424c-a0f1-76abf4b297c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/CLASES/Casilla.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/EsquinaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/EsquinaDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/EstacionDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/EstacionDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/SuerteDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/SuerteDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Baraja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Baraja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Calle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Calle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CartaSuerte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/CartaSuerte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Casilla.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Conexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Conexion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Efectos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Efectos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Esquina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Esquina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Estacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Estacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Normal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Normal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Partida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Suerte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Suerte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CLASES/Normal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Normal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/EsquinaDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/EsquinaDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/EstacionDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/EstacionDAOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Exception" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -51,23 +36,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "JUnit.PersonaTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Merging main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Iván/Desktop/PROYECTO/MONOPOLY",
-    "onboarding.tips.debug.path": "C:/Users/IvánHernándezLópez/Desktop/MONOPOLY/MONOPOLY/src/main/java/Main.java",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersonaTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ivan&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/IvánHernándezLópez/Desktop/PROYECTO/MONOPOLY&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/IvánHernándezLópez/Desktop/MONOPOLY/MONOPOLY/src/main/java/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
