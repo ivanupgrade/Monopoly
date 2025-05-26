@@ -24,7 +24,7 @@ public class Baraja {
     }
 
     public void reponerBaraja (Baraja baraja){
-
+        
     }
 
     public CartaSuerte robarCarta(){
