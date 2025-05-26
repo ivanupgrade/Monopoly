@@ -1,3 +1,7 @@
+package DAO;
+
+import CLASES.Partida;
+
 import java.util.ArrayList;
 
 public interface PartidaDAO {
