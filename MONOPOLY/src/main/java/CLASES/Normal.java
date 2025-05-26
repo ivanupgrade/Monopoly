@@ -7,8 +7,8 @@ public class Normal extends Calle{
     private int precioEdificio;
     private int[] tablaPrecios;
 
-    public Normal(int posicion, String nombre, int precio, String color, int numCasas, int precioEdificio, int[] tablaPrecios) {
-        super(posicion, nombre, tablaPrecios[numCasas], precio);
+    public Normal(int posicion, String nombre, int precio, String color, int numCasas, int precioEdificio, int[] tablaPrecios, Jugador dueño) {
+        super(posicion, nombre, tablaPrecios[numCasas], precio, dueño);
         this.color = color;
         this.numCasas = numCasas;
         this.precioEdificio = precioEdificio;

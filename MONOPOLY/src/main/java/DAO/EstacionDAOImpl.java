@@ -22,7 +22,7 @@ public class EstacionDAOImpl implements EstacionDAO{
             preparedStatement.setInt(1, posicion);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                return new Estacion(resultSet.getInt("posicion"), resultSet.getString("nombre"), resultSet.getInt("precio"));
+                return new Estacion(resultSet.getInt("posicion"), resultSet.getString("nombre"), resultSet.getInt("precio"), null);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -39,7 +39,7 @@ public class EstacionDAOImpl implements EstacionDAO{
         ) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                estaciones.add(new Estacion(resultSet.getInt("posicion"), resultSet.getString("nombre"), resultSet.getInt("precio")));
+                estaciones.add(new Estacion(resultSet.getInt("posicion"), resultSet.getString("nombre"), resultSet.getInt("precio"), null));
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

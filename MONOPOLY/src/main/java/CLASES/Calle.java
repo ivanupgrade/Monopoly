@@ -9,11 +9,12 @@ public abstract class Calle extends Casilla{
     private int precio;
     private Jugador dueño;
 
-    public Calle(int posicion, String nombre, int alquiler, int precio) {
+    public Calle(int posicion, String nombre, int alquiler, int precio, Jugador dueño) {
         super(posicion);
         this.nombre = nombre;
         this.alquiler = alquiler;
         this.precio = precio;
+        this.dueño = dueño;
     }
 
     public String getNombre() {

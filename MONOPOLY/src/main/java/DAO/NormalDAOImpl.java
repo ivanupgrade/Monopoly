@@ -23,8 +23,8 @@ public class NormalDAOImpl implements NormalDAO{
             preparedStatement.setInt(1, posicion);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                int [] tablaPrecios = {resultSet.getInt("casa_1"), resultSet.getInt("casa_2"), resultSet.getInt("casa_3"), resultSet.getInt("casa_4"), resultSet.getInt("hotel")};
-                return new Normal(resultSet.getInt("posicion"), resultSet.getString("nombre"), resultSet.getInt("precio"), resultSet.getString("color"), 0, resultSet.getInt("p_edificio"), tablaPrecios);
+                int [] tablaPrecios = {resultSet.getInt("alquiler"), resultSet.getInt("casa_1"), resultSet.getInt("casa_2"), resultSet.getInt("casa_3"), resultSet.getInt("casa_4"), resultSet.getInt("hotel")};
+                return new Normal(resultSet.getInt("posicion"), resultSet.getString("nombre"), resultSet.getInt("precio"), resultSet.getString("color"), 0, resultSet.getInt("p_edificio"), tablaPrecios, null);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -42,7 +42,7 @@ public class NormalDAOImpl implements NormalDAO{
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int [] tablaPrecios = {resultSet.getInt("casa_1"), resultSet.getInt("casa_2"), resultSet.getInt("casa_3"), resultSet.getInt("casa_4"), resultSet.getInt("hotel")};
-                normales.add(new Normal(resultSet.getInt("posicion"), resultSet.getString("nombre"), resultSet.getInt("precio"), resultSet.getString("color"), 0, resultSet.getInt("p_edificio"), tablaPrecios));
+                normales.add(new Normal(resultSet.getInt("posicion"), resultSet.getString("nombre"), resultSet.getInt("precio"), resultSet.getString("color"), 0, resultSet.getInt("p_edificio"), tablaPrecios, null));
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

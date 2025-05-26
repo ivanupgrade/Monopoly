@@ -2,8 +2,8 @@ package CLASES;
 
 public class Estacion extends Calle{
 
-    public Estacion(int posicion, String nombre, int precio) {
-        super(posicion, nombre, 25, precio);
+    public Estacion(int posicion, String nombre, int precio, Jugador dueño) {
+        super(posicion, nombre, 25, precio, dueño);
     }
 
     @Override
