@@ -53,6 +53,17 @@ public class Normal extends Calle{
     }
 
     public void construirCasa (Jugador jugador){
+        if (numCasas < 5) {
+            if (jugador.getDinero() > precioEdificio) {
+                jugador.setDinero(jugador.getDinero()-precioEdificio);
+                numCasas++;
+                modificarAlquiler(jugador);
+            }else {
+                System.out.println("Dinero insuficiente");
+            }
 
+        }else {
+            System.out.println("Has alcanzado el numero máximo de casas");
+        }
     }
 }

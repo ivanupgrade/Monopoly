@@ -1,8 +1,12 @@
 package CLASES;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Partida {
 
@@ -81,6 +85,114 @@ public class Partida {
     }
 
     public void cambiarTurno(){
+        turno++;
+        turno = Math.floorMod(turno, jugadores.size());
+
+    }
+    public void turnos() {
+        Scanner sc = new Scanner(System.in);
+        Jugador jugador = jugadores.get(turno);
+
+        System.out.printf("Es el turno de %s id=%d", jugador.getNombre(), jugador.getId());
+
+
+
+        String respuesta = "";
+        String nombre_calle;
+
+
+        while (!respuesta.equalsIgnoreCase("l")) {
+            System.out.println("Pulsa 'l' para lanzar los dados!!!");
+            respuesta = sc.nextLine();
+
+            if (respuesta.equalsIgnoreCase("l")) {
+
+                int dado = tirarDado();
+                System.out.println("Has sacado un "+dado);
+
+                if (jugador.isEncarcelado()) {
+                    if (dado == 6) {
+                        System.out.println("Felicidades, has salido de la carcel");
+                        jugador.setEncarcelado(false);
+
+                    }else {
+                        System.out.println("Sigues siendo preso, mas suerte la proxima vez (Sacar 6 para salir)");
+                        cambiarTurno();
+                        return;
+                    }
+
+                }
+                jugador.mover(dado);
+                Casilla casilla_jugador = casillas.get(jugador.getPosicion());
+
+
+                if (casilla_jugador instanceof Calle) {
+                    nombre_calle = ((Calle) casilla_jugador).getNombre();
+                    System.out.println("Has caido en la calle " + nombre_calle);
+                    ((Calle) casilla_jugador).aplicarEfecto(jugador, this);
+
+                }else if (casilla_jugador instanceof Suerte) {
+                    System.out.println("Has caido en una casilla de suerte");
+                    ((Suerte) casilla_jugador).aplicarEfecto(jugador,this);
+
+                } else{
+                    String tipo_casilla = ((Esquina) casilla_jugador).getTipo();
+                    System.out.println("Has caido en la calle " + tipo_casilla);
+                    ((Esquina) casilla_jugador).aplicarEfecto(jugador,this);
+
+                }
+                dibujarTablero();
+
+
+
+
+            } else {
+                System.out.println("comando incorrecto");
+            }
+        }
+
+        System.out.printf("¿QUE DESEAS REALIZAR? %n 1.Continuar %n 2.Realizar un intercambio");
+        int respuesta2 = sc.nextInt();
+
+        if (respuesta2 == 1) {
+            cambiarTurno();
+        } else if (respuesta2 == 2) {
+            System.out.println("Indique la id del jugador con el que desea tradear");
+            for (int i = 0; i < jugadores.size(); i++) {
+                System.out.println(i+"."+jugadores.get(i).getNombre());
+            }
+            int id = sc.nextInt();
+
+            System.out.println("indica que quieres ofrecer(1=dinero, 2=calle)");
+            int respuesta3= sc.nextInt();
+
+            if (respuesta3==1){
+                System.out.println("Indica cuanto dinero quieres ofrecer");
+                int dinero_ofrecido = sc.nextInt();
+
+            } else if (respuesta3==2) {
+                System.out.println("Indica la id de la propiedad a ofrecer");
+                for (int i = 0; i < jugador.getCalles().size(); i++) {
+                    System.out.println(i+"."+jugador.getCalles());
+                }
+                
+            }else {
+                System.out.println("opcion incorrecta");
+            }
+
+        }
+    }
+
+
+
+
+    public void intercambiar (Jugador jugador, int dinero, Calle calle){
+
+    }
+    public void intercambiar (Jugador jugador, Calle calle, int dinero){
+
+    }
+    public void intercambiar (Jugador jugador, Calle calle1, Calle calle2){
 
     }
 
