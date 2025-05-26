@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ea4ecb4-51f8-424c-a0f1-76abf4b297c5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASES/Calle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Calle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASES/Estacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Estacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASES/Normal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Normal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/EstacionDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/EstacionDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/NormalDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/NormalDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/PartidaDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/PartidaDAOImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="8ea4ecb4-51f8-424c-a0f1-76abf4b297c5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +46,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

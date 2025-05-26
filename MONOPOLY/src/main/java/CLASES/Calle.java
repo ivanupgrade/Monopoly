@@ -70,6 +70,7 @@ public abstract class Calle extends Casilla{
             } else {
                 modificarAlquiler(dueño);
                 jugador.setDinero(jugador.getDinero()-alquiler);
+                System.out.println("Has pagado "+alquiler+" de alquiler");
                 dueño.setDinero(dueño.getDinero()+alquiler);
             }
         }

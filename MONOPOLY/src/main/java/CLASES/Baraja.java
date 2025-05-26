@@ -24,7 +24,9 @@ public class Baraja {
     }
 
     public void reponerBaraja (Baraja baraja){
-
+        this.baraja = baraja.getBaraja();
+        baraja.getBaraja().clear();
+        barajar();
     }
 
     public CartaSuerte robarCarta(){
