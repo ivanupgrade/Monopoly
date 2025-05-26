@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8ea4ecb4-51f8-424c-a0f1-76abf4b297c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CartaSuerteDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CartaSuerteDAOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +28,9 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2xMwHalbT1Xu4cgoQmi26Eh3meA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,9 +42,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "marta",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ManuelTejedaMartin/Desktop/TFG_MONOPOLY/MONOPOLY",
+    "last_opened_file_path": "C:/Users/Iván/Desktop/PROYECTO/MONOPOLY",
     "onboarding.tips.debug.path": "C:/Users/IvánHernándezLópez/Desktop/MONOPOLY/MONOPOLY/src/main/java/Main.java",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -64,19 +68,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="ivan" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>

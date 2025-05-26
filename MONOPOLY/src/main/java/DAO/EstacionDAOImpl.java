@@ -4,6 +4,7 @@ import CLASES.Estacion;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class EstacionDAOImpl implements EstacionDAO{
@@ -19,7 +20,7 @@ public class EstacionDAOImpl implements EstacionDAO{
                 PreparedStatement preparedStatement = conexion.prepareStatement("SELECT * FROM calles WHERE posicion = ? AND tipo = 'estacion'")
         ) {
             preparedStatement.setInt(1, posicion);
-            var resultSet = preparedStatement.executeQuery();
+            ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 return new Estacion(resultSet.getInt("posicion"), resultSet.getString("nombre"), resultSet.getInt("precio"));
             }
@@ -36,7 +37,7 @@ public class EstacionDAOImpl implements EstacionDAO{
         try (
                 PreparedStatement preparedStatement = conexion.prepareStatement("SELECT * FROM calles WHERE tipo = 'estacion'")
         ) {
-            var resultSet = preparedStatement.executeQuery();
+            ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 estaciones.add(new Estacion(resultSet.getInt("posicion"), resultSet.getString("nombre"), resultSet.getInt("precio")));
             }
