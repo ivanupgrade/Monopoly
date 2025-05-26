@@ -15,6 +15,38 @@ public class Normal extends Calle{
         this.tablaPrecios = tablaPrecios;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getNumCasas() {
+        return numCasas;
+    }
+
+    public void setNumCasas(int numCasas) {
+        this.numCasas = numCasas;
+    }
+
+    public int getPrecioEdificio() {
+        return precioEdificio;
+    }
+
+    public void setPrecioEdificio(int precioEdificio) {
+        this.precioEdificio = precioEdificio;
+    }
+
+    public int[] getTablaPrecios() {
+        return tablaPrecios;
+    }
+
+    public void setTablaPrecios(int[] tablaPrecios) {
+        this.tablaPrecios = tablaPrecios;
+    }
+
     @Override
     public void modificarAlquiler(Jugador jugador) {
         setAlquiler(tablaPrecios[numCasas]);

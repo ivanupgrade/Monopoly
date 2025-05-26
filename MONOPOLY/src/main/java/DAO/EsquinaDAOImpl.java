@@ -21,7 +21,7 @@ public class EsquinaDAOImpl implements EsquinaDAO{
                 PreparedStatement preparedStatement = conexion.prepareStatement("SELECT * FROM esquina WHERE posicion = ?")
         ) {
             preparedStatement.setInt(1, posicion);
-            var resultSet = preparedStatement.executeQuery();
+            ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 esquina = new Esquina(resultSet.getInt("posicion"), resultSet.getString("tipo"));
             }
