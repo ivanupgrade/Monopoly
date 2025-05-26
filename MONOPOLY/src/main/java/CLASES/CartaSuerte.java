@@ -7,6 +7,9 @@ public class CartaSuerte implements Efectos{
     private int valor;
     private String descripcion;
 
+    public CartaSuerte() {
+    }
+
     public CartaSuerte(int id, String tipo, int valor, String descripcion) {
         this.id = id;
         this.tipo = tipo;
@@ -39,5 +42,37 @@ public class CartaSuerte implements Efectos{
 
             partida.getCasillas().get(valor).aplicarEfecto(jugador, partida);
         }
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getValor() {
+        return valor;
+    }
+
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }

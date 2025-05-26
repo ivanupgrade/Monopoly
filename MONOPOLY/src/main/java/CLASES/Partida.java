@@ -14,6 +14,10 @@ public class Partida {
     private ArrayList<Casilla> casillas;
     private int turno;
 
+    public Partida() {
+
+    }
+
     public Partida(int id, Date fecha, Baraja mazoRobo, Baraja mazoDescarte, ArrayList<Jugador> jugadores, ArrayList<Casilla> casillas, int turno) {
         this.id = id;
         this.fecha = fecha;
@@ -28,8 +32,8 @@ public class Partida {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setFecha(java.sql.Date fecha) {
+        this.fecha = this.fecha;
     }
 
     public Baraja getMazoRobo() {
@@ -87,4 +91,7 @@ public class Partida {
     }
 
 
+    public int getId() {
+        return id;
+    }
 }
