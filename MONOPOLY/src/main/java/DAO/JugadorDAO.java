@@ -1,5 +1,7 @@
 package DAO;
 
+import CLASES.Jugador;
+
 import java.util.ArrayList;
 
 public interface JugadorDAO {

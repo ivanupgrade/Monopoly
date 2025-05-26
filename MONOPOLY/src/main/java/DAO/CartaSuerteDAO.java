@@ -1,5 +1,7 @@
 package DAO;
 
+import CLASES.CartaSuerte;
+
 import java.util.ArrayList;
 
 public interface CartaSuerteDAO {

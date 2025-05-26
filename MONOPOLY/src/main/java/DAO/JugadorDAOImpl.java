@@ -1,5 +1,7 @@
 package DAO;
 
+import CLASES.Jugador;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +14,7 @@ public class JugadorDAOImpl implements JugadorDAO {
 
     @Override
     public void insertar(Jugador jugador) {
-        String sql = "INSERT INTO jugadores ( nombre, p_ganadas) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO jugadores ( nombre, p_ganadas) VALUES (?, ?)";
         try (PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setString(1, jugador.getNombre());
             pst.setInt(2, jugador.getP_ganadas());

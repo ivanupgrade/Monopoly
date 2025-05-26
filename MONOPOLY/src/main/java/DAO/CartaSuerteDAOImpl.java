@@ -1,5 +1,7 @@
 package DAO;
 
+import CLASES.CartaSuerte;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,7 +18,7 @@ public class CartaSuerteDAOImpl implements CartaSuerteDAO {
 
     @Override
     public void insertar(CartaSuerte carta) {
-    String sql = "INSERT INTO carta (tipo, valor, descripcion) VALUES (?, ?, ?)";
+    String sql = "INSERT INTO cartas (tipo, valor, descripcion) VALUES (?, ?, ?)";
        try (PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setString(1, carta.getTipo());
             pst.setInt(2, carta.getValor());
@@ -29,7 +31,7 @@ public class CartaSuerteDAOImpl implements CartaSuerteDAO {
 
    @Override
     public CartaSuerte obtener(int id) {
-       String sql = "SELECT * FROM carta WHERE id = ?";
+       String sql = "SELECT * FROM cartas WHERE id = ?";
         try (PreparedStatement pst = conn.prepareStatement(sql)) {
             pst.setInt(1, id);
             try (ResultSet rs = pst.executeQuery()) {
@@ -52,7 +54,7 @@ public class CartaSuerteDAOImpl implements CartaSuerteDAO {
     @Override
     public ArrayList<CartaSuerte> obtenerTodos() {
     ArrayList<CartaSuerte> cartas = new ArrayList<>();
-        String sql = "SELECT * FROM carta";
+        String sql = "SELECT * FROM cartas";
         try (PreparedStatement pst = conn.prepareStatement(sql);
              ResultSet rs = pst.executeQuery()) {
             while (rs.next()) {
@@ -71,7 +73,7 @@ public class CartaSuerteDAOImpl implements CartaSuerteDAO {
 
     @Override
     public void actualizar(CartaSuerte carta) {
-        String sql = "UPDATE carta SET tipo = ?, valor = ?, descripcion = ? WHERE id = ?";
+        String sql = "UPDATE cartas SET tipo = ?, valor = ?, descripcion = ? WHERE id = ?";
         try (PreparedStatement pst = conn.prepareStatement(sql)){
             pst.setString(1, carta.getTipo());
             pst.setInt(2, carta.getValor());
@@ -86,7 +88,7 @@ public class CartaSuerteDAOImpl implements CartaSuerteDAO {
 
     @Override
     public void eliminar(int id) {
-        String sql = "DELETE FROM carta WHERE id = ?";
+        String sql = "DELETE FROM cartas WHERE id = ?";
         try (PreparedStatement pst = conn.prepareStatement(sql)){
             pst.setInt(1, id);
             pst.executeUpdate();
