@@ -9,6 +9,8 @@ public class Jugador {
     private ArrayList<Calle> calles;
     private boolean encarcelado;
 
+    public Jugador(){}
+
     public Jugador(String nombre) {
         this.nombre = nombre;
         calles = new ArrayList<>();
@@ -24,6 +26,22 @@ public class Jugador {
         this.dinero = dinero;
         this.calles = calles;
         this.encarcelado = encarcelado;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getP_ganadas() {
+        return p_ganadas;
+    }
+
+    public void setP_ganadas(int p_ganadas) {
+        this.p_ganadas = p_ganadas;
     }
 
     public String getNombre() {
@@ -78,4 +96,5 @@ public class Jugador {
             dinero += 200;
         }
     }
+
 }
