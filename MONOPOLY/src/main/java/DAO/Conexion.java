@@ -8,9 +8,8 @@ public class Conexion {
     private static final String PASS = "";
 
     public static Connection getConexion() {
-        try (
-                Connection connection = java.sql.DriverManager.getConnection(DB_URL, USER, PASS)
-        ) {
+        try {
+            Connection connection = java.sql.DriverManager.getConnection(DB_URL, USER, PASS);
             return connection;
 
         } catch (Exception e) {
