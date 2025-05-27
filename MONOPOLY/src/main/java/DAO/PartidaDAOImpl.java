@@ -19,8 +19,9 @@ public class PartidaDAOImpl implements PartidaDAO{
 
     @Override
     public void insertar(Partida partida) {
-        String sql = "INSERT INTO partidas (fecha) VALUES (curdate())";
+        String sql = "INSERT INTO partidas (fecha, turno) VALUES (curdate(), ?)";
         try (PreparedStatement pst = conn.prepareStatement(sql)) {
+            pst.setInt(1, partida.getTurno());
             pst.executeUpdate();
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -35,7 +36,9 @@ public class PartidaDAOImpl implements PartidaDAO{
             try (ResultSet rs = pst.executeQuery()){
                 if(rs.next()){
                     Partida partida = new Partida();
+                    partida.setId(rs.getInt("id"));
                     partida.setFecha(rs.getDate("fecha"));
+                    partida.setTurno(rs.getInt("turno"));
                     return partida;
                 }
             }
@@ -86,38 +89,42 @@ public class PartidaDAOImpl implements PartidaDAO{
 
     public Partida obtenerExistente (int id){
         String sql = "SELECT * FROM partidas WHERE id = ?";
-        String sql2 = "SELECT * FROM cartas LEFT JOIN cartas_partidas ON id = id_cartas where id_partidas = ?";
-        String sql3 = "SELECT * FROM jugadores LEFT JOIN jugadores_partidas ON id = id_jugadores where id_partidas = ?";
+        String sql2 = "SELECT * FROM cartas_partidas LEFT JOIN cartas ON id = id_cartas where id_partidas = ?";
+        String sql3 = "SELECT * FROM jugadores_partidas LEFT JOIN jugadores ON id = id_jugadores where id_partidas = ?";
         String sql4 = """
                 SELECT * FROM partidas_jugadores_calles LEFT JOIN calles ON partidas_jugadores_calles.posicion = calles.posicion
                 LEFT JOIN jugadores ON id_jugadores = jugadores.id
                 WHERE partidas.id = ?
                 """;
+        String sql5 = "SELECT * FROM calles WHERE posicion NOT IN (SELECT posicion FROM partidas_jugadores_calles WHERE id_partidas = ?)";
 
         try (
                 PreparedStatement pst = conn.prepareStatement(sql);
                 PreparedStatement pst2 = conn.prepareStatement(sql2);
                 PreparedStatement pst3 = conn.prepareStatement(sql3);
-                PreparedStatement pst4 = conn.prepareStatement(sql4)
+                PreparedStatement pst4 = conn.prepareStatement(sql4);
+                PreparedStatement pst5 = conn.prepareStatement(sql5)
 
         ){
             pst.setInt(1,id);
             pst2.setInt(1, id);
             pst3.setInt(1, id);
             pst4.setInt(1, id);
-
+            pst5.setInt(1, id);
 
             try (
                     ResultSet rs = pst.executeQuery();
                     ResultSet rs2 = pst2.executeQuery();
                     ResultSet rs3 = pst3.executeQuery();
                     ResultSet rs4 = pst4.executeQuery();
-
+                    ResultSet rs5 = pst5.executeQuery()
 
             ){
                 if(rs.next()){
                     Partida partida = new Partida();
+                    partida.setId(rs.getInt("id"));
                     partida.setFecha(rs.getDate("fecha"));
+                    partida.setTurno(rs.getInt("turno"));
 
                     ArrayList<CartaSuerte> robo = new ArrayList<>();
                     ArrayList<CartaSuerte> descarte = new ArrayList<>();
@@ -143,15 +150,30 @@ public class PartidaDAOImpl implements PartidaDAO{
 
                             for (Jugador jugador : jugadores){
                                 if (jugador.getId() == rs4.getInt("id_jugadores")){
-                                    casillas.add(new Normal(rs4.getInt("posicion"), rs4.getString("nombre"), rs4.getInt("precio"), rs4.getString("color"), rs4.getInt("n_casas"), rs4.getInt("p_edificio"), tablaPrecios, jugador));
+                                    Normal normal = new Normal(rs4.getInt("posicion"), rs4.getString("nombre"), rs4.getInt("precio"), rs4.getString("color"), rs4.getInt("n_casas"), rs4.getInt("p_edificio"), tablaPrecios, jugador);
+                                    jugador.getCalles().add(normal);
+                                    casillas.add(normal);
                                 }
                             }
                         } else {
                             for (Jugador jugador : jugadores){
                                 if (jugador.getId() == rs4.getInt("id_jugadores")){
-                                    casillas.add(new Estacion(rs4.getInt("posicion"), rs4.getString("nombre"), rs4.getInt("precio"), jugador));
+                                    Estacion estacion = new Estacion(rs4.getInt("posicion"), rs4.getString("nombre"), rs4.getInt("precio"), jugador);
+                                    jugador.getCalles().add(estacion);
+                                    casillas.add(estacion);
                                 }
                             }
+                        }
+                    }
+
+                    while (rs5.next()){
+                        if (rs5.getString("tipo").equals("normal")){
+                            int [] tablaPrecios = {rs5.getInt("alquiler"), rs5.getInt("casa_1"), rs5.getInt("casa_2"), rs5.getInt("casa_3"), rs5.getInt("casa_4"), rs5.getInt("hotel")};
+                            Normal normal = new Normal(rs5.getInt("posicion"), rs5.getString("nombre"), rs5.getInt("precio"), rs5.getString("color"), 0, rs5.getInt("p_edificio"), tablaPrecios, null);
+                            casillas.add(normal);
+                        } else {
+                            Estacion estacion = new Estacion(rs5.getInt("posicion"), rs5.getString("nombre"), rs5.getInt("precio"), null);
+                            casillas.add(estacion);
                         }
                     }
 
@@ -167,6 +189,7 @@ public class PartidaDAOImpl implements PartidaDAO{
                     partida.setMazoRobo(mazoRobo);
                     partida.setMazoDescarte(mazoDescarte);
                     partida.setJugadores(jugadores);
+                    partida.setCasillas(casillas);
 
                     return partida;
                 }

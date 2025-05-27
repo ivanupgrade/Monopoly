@@ -23,24 +23,37 @@ public class CartaSuerte implements Efectos{
 
         if (tipo.equals("pagar")){
             jugador.setDinero(jugador.getDinero()-valor);
+
         } else if (tipo.equals("cobrar")) {
             jugador.setDinero(jugador.getDinero()+valor);
+
         } else {
             int mov_casilla;
-            if (valor<0){
-                mov_casilla = jugador.getPosicion()-valor;
+
+            if (valor == 21){
+                jugador.setPosicion(27);
+
             } else {
-                mov_casilla = valor-jugador.getPosicion();
+                if (valor < 0) {
+                    mov_casilla = jugador.getPosicion() - valor;
+                } else {
+                    mov_casilla = valor - jugador.getPosicion();
+                }
+
+                if (mov_casilla >= 0) {
+                    jugador.mover(mov_casilla);
+                } else {
+                    mov_casilla += 28;
+                    jugador.mover(mov_casilla);
+                }
             }
 
-            if (mov_casilla >= 0){
-                jugador.mover(mov_casilla);
-            } else {
-                mov_casilla += 28;
-                jugador.mover(mov_casilla);
+            for (Casilla casilla : partida.getCasillas()) {
+                if (casilla.getPosicion() == jugador.getPosicion()) {
+                    casilla.aplicarEfecto(jugador, partida);
+                    break;
+                }
             }
-
-            partida.getCasillas().get(valor).aplicarEfecto(jugador, partida);
         }
     }
 

@@ -32,12 +32,21 @@ public class Partida {
         this.turno = turno;
     }
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Date getFecha() {
         return fecha;
     }
 
     public void setFecha(java.sql.Date fecha) {
-        this.fecha = this.fecha;
+        this.fecha = fecha;
     }
 
     public Baraja getMazoRobo() {
@@ -200,10 +209,5 @@ public class Partida {
         Random random = new Random();
         int dado = random.nextInt(1,7);
         return dado;
-    }
-
-
-    public int getId() {
-        return id;
     }
 }
