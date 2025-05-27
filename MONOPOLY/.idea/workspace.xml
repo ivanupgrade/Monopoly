@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ea4ecb4-51f8-424c-a0f1-76abf4b297c5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASES/CartaSuerte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/CartaSuerte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASES/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CLASES/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CLASES/Partida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/PartidaDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/PartidaDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RECURSOS/SQL_MONOPOLY.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../RECURSOS/SQL_MONOPOLY.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +77,17 @@
             </list>
           </value>
         </entry>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="TAB_STATES">
@@ -94,7 +100,14 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="ivan" />
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="user">
+                    <value>
+                      <list>
+                        <option value="*" />
                       </list>
                     </value>
                   </entry>
