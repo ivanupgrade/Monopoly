@@ -12,8 +12,8 @@ public class CartaSuerteDAOImpl implements CartaSuerteDAO {
 
     Connection conn;
 
-    public CartaSuerteDAOImpl(Connection conn) {
-        this.conn = conn;
+    public CartaSuerteDAOImpl() {
+        this.conn = Conexion.getConexion();
     }
 
     @Override

@@ -13,8 +13,8 @@ public class PartidaDAOImpl implements PartidaDAO{
 
     Connection conn;
 
-    public PartidaDAOImpl(Connection conn) {
-        this.conn = conn;
+    public PartidaDAOImpl() {
+        this.conn = Conexion.getConexion();
     }
 
     @Override

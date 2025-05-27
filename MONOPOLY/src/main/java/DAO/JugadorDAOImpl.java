@@ -12,6 +12,10 @@ public class JugadorDAOImpl implements JugadorDAO {
 
     Connection conn;
 
+    public JugadorDAOImpl (){
+        this.conn = Conexion.getConexion();
+    }
+
     @Override
     public void insertar(Jugador jugador) {
         String sql = "INSERT INTO jugadores ( nombre, p_ganadas) VALUES (?, ?)";
