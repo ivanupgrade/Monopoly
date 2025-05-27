@@ -90,7 +90,7 @@ public class PartidaDAOImpl implements PartidaDAO{
     public Partida obtenerExistente (int id){
         String sql = "SELECT * FROM partidas WHERE id = ?";
         String sql2 = "SELECT * FROM cartas_partidas LEFT JOIN cartas ON id = id_cartas where id_partidas = ?";
-        String sql3 = "SELECT * FROM partidas_jugadores LEFT JOIN jugadores ON id = id_jugadores where id_partidas = ?";
+        String sql3 = "SELECT * FROM jugadores_partidas LEFT JOIN jugadores ON id = id_jugadores where id_partidas = ?";
         String sql4 = """
                 SELECT * FROM partidas_jugadores_calles LEFT JOIN calles ON partidas_jugadores_calles.posicion = calles.posicion
                 LEFT JOIN jugadores ON id_jugadores = jugadores.id
@@ -268,6 +268,70 @@ public class PartidaDAOImpl implements PartidaDAO{
             pst4.executeBatch();
 
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void crearNueva (ArrayList<Jugador> jugadores) {
+        Partida partida = new Partida();
+
+        String sql = "INSERT INTO partidas (fecha, turno) VALUES (curdate(), 0)";
+        String sql2 = "SELECT * FROM partidas ORDER BY id DESC LIMIT 1";
+        String sql3 = "INSERT INTO cartas_partidas VALUES (?, ?, ?)";
+        String sql4 = "INSERT INTO partidas_jugadores VALUES (?, ?, ?, ?, ?)";
+        String sql5 = "INSERT INTO partidas_casillas VALUES (?, ?)";
+
+        try (
+                PreparedStatement pst = conn.prepareStatement(sql);
+                PreparedStatement pst2 = conn.prepareStatement(sql2);
+                PreparedStatement pst3 = conn.prepareStatement(sql3);
+                PreparedStatement pst4 = conn.prepareStatement(sql4);
+                PreparedStatement pst5 = conn.prepareStatement(sql5)
+
+        ) {
+            try (ResultSet rs = pst2.executeQuery()) {
+                if (rs.next()){
+                    partida.setId(rs.getInt("id"));
+                    partida.setFecha(rs.getDate("fecha"));
+                    partida.setTurno(rs.getInt("turno"));
+                }
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+            CartaSuerteDAOImpl cartaSuerteDAO = new CartaSuerteDAOImpl();
+            ArrayList<CartaSuerte> cartas = cartaSuerteDAO.obtenerTodos();
+
+            for (CartaSuerte carta : cartas) {
+                pst2.setInt(1, partida.getId());
+                pst2.setInt(2, carta.getId());
+                pst2.setInt(3, 0); // Baraja inicial
+                pst2.addBatch();
+            }
+
+            for (Jugador jugador : jugadores) {
+                pst4.setInt(1, jugador.getId());
+                pst4.setInt(2, partida.getId());
+                pst4.setBoolean(3, jugador.isEncarcelado());
+                pst4.setInt(4, jugador.getDinero());
+                pst4.setInt(5, jugador.getPosicion());
+                pst4.addBatch();
+            }
+
+            for (int i = 0; i < 28; i++) {
+                pst5.setInt(1, partida.getId());
+                pst5.setInt(2, i);
+                pst5.addBatch();
+            }
+
+
+            pst.executeUpdate();
+            pst3.executeBatch();
+            pst4.executeBatch();
+            pst5.executeBatch();
+
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
