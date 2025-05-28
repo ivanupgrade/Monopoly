@@ -91,7 +91,91 @@ public class Partida {
 
     public void dibujarTablero(){
 
+        String reset = "\u001B[0m";
+        ArrayList<Calle> calles = new ArrayList<>();
+
+
+        // Colores ANSI
+        String blanco = "\u001B[30m"+"\u001B[47m";
+        String blancoNegro = "\u001B[30m"+"\u001B[47m";
+        String marron = "\u001B[30m"+"\u001B[43m";
+        String azulClaro = "\u001B[30m"+"\u001B[106m";
+        String rosa = "\u001B[30m"+"\u001B[105m";
+        String rojo = "\u001B[30m"+"\u001B[41m";
+        String azulOscuro = "\u001B[30m"+"\u001B[44m";
+        String verde = "\u001B[30m"+"\u001B[42m";
+        String amarillo = "\u001B[30m"+"\u001B[103m";
+        String naranja = "\u001B[30m"+"\u001B[45m";
+
+
+
+
+        System.out.println("╔"+"═".repeat(30)+("╦"+"═".repeat(30)).repeat(7)+"╗");
+        for (int i = 0; i <= 7; i++) {
+            System.out.print("║"+calles.get(i).getNombre());
+        }
+        System.out.println("║");
+
+
+        // Separacion parte abajo de las casillas (0–7).
+        for (int i = 0; i <= 7; i++) {
+            System.out.print("║"+calles.get(i).getNombre()+"     -   " +
+                    "     -        -      "+reset);
+        }
+        System.out.println("║");
+
+        //Apartado para casas. Parte arriba
+        for (int i = 0; i <= 7; i++) {
+            System.out.print("║"+calles.get(i).getNombre()+" ".repeat(30)+reset);
+        }
+        System.out.println("║");
+        System.out.println("╠"+"═".repeat(30)+"╬"+("═".repeat(30)+"╩").repeat(5)+"═".repeat(30)+"╬"+"═".repeat(30)+"╣");
+
+        // Lados (27–21 y 8–13)
+        for (int i = 27, j = 8; i > 21; i--, j++) {
+            //Datos casillas y colores
+            System.out.print("║"+calles.get(i).getNombre()+"║");
+            System.out.print(" ".repeat(185)+"║");
+            System.out.println(calles.get(j).getNombre()+"║");
+
+            //Separacion
+            System.out.print("║"+calles.get(i).getNombre()+" ".repeat(30)+reset+"║");
+            System.out.print(" ".repeat(185)+"║");
+            System.out.println(calles.get(j).getNombre()+" ".repeat(30)+reset+"║");
+
+            //Zona casas
+            System.out.print("║"+calles.get(i).getNombre()+" ".repeat(30)+reset+"║");
+            System.out.print(" ".repeat(185)+"║");
+            System.out.println(calles.get(j).getNombre()+" ".repeat(30)+reset+"║");
+
+            if (i!=21 && j!=13){
+                System.out.println("╠"+"═".repeat(30)+"╣"+" ".repeat(185)+"╠"+"═".repeat(30)+"╣");
+            }else {
+                System.out.println("╠"+"═".repeat(30)+"╬"+("═".repeat(30)+"╦").repeat(5)+"═".repeat(30)+"╬"+"═".repeat(30)+"╣");
+            }
+
+        }
+
+        // Parte inferior (21–14)
+        for (int i = 21; i >= 14; i--) {
+            System.out.print("║"+calles.get(i).getNombre());
+
+        }
+        System.out.println("║");
+        for (int i = 21; i >= 14; i--) {
+            System.out.print("║"+calles.get(i).getNombre()+" ".repeat(30)+reset);
+        }
+        System.out.println("║");
+
+        for (int i = 21; i >= 14; i--) {
+            System.out.print("║"+calles.get(i).getNombre()+" ".repeat(30)+reset);
+        }
+        System.out.println("║");
+
+        System.out.println("╚"+"═".repeat(30)+("╩"+"═".repeat(30)).repeat(7)+"╝");
+
     }
+
 
     public boolean comprobarGanador() {
         if (jugadores.size()==1) {
