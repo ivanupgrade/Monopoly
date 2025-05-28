@@ -3,10 +3,7 @@ package CLASES;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Partida {
 
@@ -91,62 +88,98 @@ public class Partida {
 
     public void dibujarTablero(){
 
-        String reset = "\u001B[0m";
-        ArrayList<Calle> calles = new ArrayList<>();
+        casillas.sort(Comparator.comparingInt(Casilla::getPosicion));
 
+        HashMap<String, String> colores = new HashMap<>();
 
         // Colores ANSI
-        String blanco = "\u001B[30m"+"\u001B[47m";
-        String blancoNegro = "\u001B[30m"+"\u001B[47m";
-        String marron = "\u001B[30m"+"\u001B[43m";
-        String azulClaro = "\u001B[30m"+"\u001B[106m";
-        String rosa = "\u001B[30m"+"\u001B[105m";
-        String rojo = "\u001B[30m"+"\u001B[41m";
-        String azulOscuro = "\u001B[30m"+"\u001B[44m";
-        String verde = "\u001B[30m"+"\u001B[42m";
-        String amarillo = "\u001B[30m"+"\u001B[103m";
-        String naranja = "\u001B[30m"+"\u001B[45m";
+        colores.put("blanco","\u001B[30m"+"\u001B[47m");
+        colores.put("marron","\u001B[30m"+"\u001B[43m");
+        colores.put("celeste","\u001B[30m"+"\u001B[106m");
+        colores.put("rosa","\u001B[30m"+"\u001B[105m");
+        colores.put("rojo","\u001B[30m"+"\u001B[41m");
+        colores.put("azul","\u001B[30m"+"\u001B[44m");
+        colores.put("verde","\u001B[30m"+"\u001B[42m");
+        colores.put("amarillo","\u001B[30m"+"\u001B[103m");
+        colores.put("morado","\u001B[30m"+"\u001B[45m");
+        String reset = "\u001B[0m";
 
 
 
-
+        // Parte superior (0–7). Colores y datos
         System.out.println("╔"+"═".repeat(30)+("╦"+"═".repeat(30)).repeat(7)+"╗");
         for (int i = 0; i <= 7; i++) {
-            System.out.print("║"+calles.get(i).getNombre());
+            if (casillas.get(i) instanceof Normal){
+                System.out.print("║"+casillas.get(i).mostrar(colores.get(((Normal)casillas.get(i)).getColor())));
+            }else {
+                System.out.print("║"+casillas.get(i).mostrar(colores.get("blanco")));
+            }
         }
         System.out.println("║");
 
 
         // Separacion parte abajo de las casillas (0–7).
         for (int i = 0; i <= 7; i++) {
-            System.out.print("║"+calles.get(i).getNombre()+"     -   " +
-                    "     -        -      "+reset);
+            if (casillas.get(i) instanceof Normal){
+                System.out.print("║"+colores.get(((Normal)casillas.get(i)).getColor())+"     -   " +
+                        "     -        -      "+reset);
+            }else {
+                System.out.print("║"+colores.get("blanco")+"     -   " +
+                        "     -        -      "+reset);
+            }
         }
         System.out.println("║");
 
         //Apartado para casas. Parte arriba
         for (int i = 0; i <= 7; i++) {
-            System.out.print("║"+calles.get(i).getNombre()+" ".repeat(30)+reset);
+            if (casillas.get(i) instanceof Normal){
+                System.out.print("║"+colores.get(((Normal)casillas.get(i)).getColor())+" ".repeat(30)+reset);
+            }else {
+                System.out.print("║"+colores.get("blanco")+" ".repeat(30)+reset);
+            }
         }
         System.out.println("║");
         System.out.println("╠"+"═".repeat(30)+"╬"+("═".repeat(30)+"╩").repeat(5)+"═".repeat(30)+"╬"+"═".repeat(30)+"╣");
 
         // Lados (27–21 y 8–13)
         for (int i = 27, j = 8; i > 21; i--, j++) {
+
             //Datos casillas y colores
-            System.out.print("║"+calles.get(i).getNombre()+"║");
-            System.out.print(" ".repeat(185)+"║");
-            System.out.println(calles.get(j).getNombre()+"║");
+            if (casillas.get(i) instanceof Normal){
+                System.out.print("║"+casillas.get(i).mostrar(colores.get(((Normal)casillas.get(i)).getColor()))+"║");
+                System.out.print(" ".repeat(185)+"║");
+                System.out.println(casillas.get(j).mostrar(colores.get(((Normal)casillas.get(j)).getColor()))+"║");
+            }else {
+                System.out.print("║"+casillas.get(i).mostrar(colores.get("blanco"))+"║");
+                System.out.print(" ".repeat(185)+"║");
+                System.out.println(casillas.get(j).mostrar(colores.get("blanco"))+"║");
+            }
 
-            //Separacion
-            System.out.print("║"+calles.get(i).getNombre()+" ".repeat(30)+reset+"║");
-            System.out.print(" ".repeat(185)+"║");
-            System.out.println(calles.get(j).getNombre()+" ".repeat(30)+reset+"║");
+            //Separacion (27–21 y 8–13)
+            if (casillas.get(i) instanceof Normal){
+                System.out.print("║"+colores.get(((Normal)casillas.get(i)).getColor())+"     -   " +
+                        "     -        -      "+reset+"║");
+                System.out.print(" ".repeat(185)+"║");
+                System.out.println(colores.get(((Normal)casillas.get(j)).getColor())+"     -   " +
+                        "     -        -      "+reset+"║");
+            }else {
+                System.out.print("║"+colores.get("blanco")+"     -   " +
+                        "     -        -      "+reset+"║");
+                System.out.print(" ".repeat(185)+"║");
+                System.out.println(colores.get("blanco")+"     -   " +
+                        "     -        -      "+reset+"║");
+            }
 
-            //Zona casas
-            System.out.print("║"+calles.get(i).getNombre()+" ".repeat(30)+reset+"║");
-            System.out.print(" ".repeat(185)+"║");
-            System.out.println(calles.get(j).getNombre()+" ".repeat(30)+reset+"║");
+            //Zona casas (27–21 y 8–13)
+            if (casillas.get(i) instanceof Normal){
+                System.out.print("║"+colores.get(((Normal)casillas.get(i)).getColor())+" ".repeat(30)+reset+"║");
+                System.out.print(" ".repeat(185)+"║");
+                System.out.println(colores.get(((Normal)casillas.get(j)).getColor())+" ".repeat(30)+reset+"║");
+            }else {
+                System.out.print("║"+colores.get("blanco")+" ".repeat(30)+reset+"║");
+                System.out.print(" ".repeat(185)+"║");
+                System.out.println(colores.get("blanco")+" ".repeat(30)+reset+"║");
+            }
 
             if (i!=21 && j!=13){
                 System.out.println("╠"+"═".repeat(30)+"╣"+" ".repeat(185)+"╠"+"═".repeat(30)+"╣");
@@ -156,19 +189,37 @@ public class Partida {
 
         }
 
+        // Datos y colores (21–14)
         // Parte inferior (21–14)
         for (int i = 21; i >= 14; i--) {
-            System.out.print("║"+calles.get(i).getNombre());
-
+            if (casillas.get(i) instanceof Normal){
+                System.out.print("║"+casillas.get(i).mostrar(colores.get(((Normal)casillas.get(i)).getColor())));
+            }else {
+                System.out.print("║"+casillas.get(i).mostrar(colores.get("blanco")));
+            }
         }
+
+        //Separacion (21-14)
         System.out.println("║");
         for (int i = 21; i >= 14; i--) {
-            System.out.print("║"+calles.get(i).getNombre()+" ".repeat(30)+reset);
+            if (casillas.get(i) instanceof Normal){
+                System.out.print("║"+colores.get(((Normal)casillas.get(i)).getColor())+"     -   " +
+                        "     -        -      "+reset);
+            }else {
+                System.out.print("║"+colores.get("blanco")+"     -   " +
+                        "     -        -      "+reset);
+            }
         }
         System.out.println("║");
 
+
+        //Datos Casas(21-14)
         for (int i = 21; i >= 14; i--) {
-            System.out.print("║"+calles.get(i).getNombre()+" ".repeat(30)+reset);
+            if (casillas.get(i) instanceof Normal){
+                System.out.print("║"+colores.get(((Normal)casillas.get(i)).getColor())+" ".repeat(30)+reset);
+            }else {
+                System.out.print("║"+colores.get("blanco")+" ".repeat(30)+reset);
+            }
         }
         System.out.println("║");
 
@@ -194,7 +245,7 @@ public class Partida {
         Scanner sc = new Scanner(System.in);
         Jugador jugador = jugadores.get(Math.floorMod(turno, jugadores.size()));
 
-        System.out.printf("Es el turno de %s id=%d", jugador.getNombre(), jugador.getId());
+        System.out.printf("Es el turno de %s: tienes %d", jugador.getNombre(), jugador.getDinero());
         
         String respuesta = "";
         String nombre_calle;
@@ -227,7 +278,7 @@ public class Partida {
                     if (casilla.getPosicion() == jugador.getPosicion()) {
                         if (casilla instanceof Calle) {
                             nombre_calle = ((Calle) casilla).getNombre();
-                            System.out.println("Has caido en la calle " + nombre_calle);
+                            System.out.println("Has caido en " + nombre_calle);
                             ((Calle) casilla).aplicarEfecto(jugador, this);
 
                         }else if (casilla instanceof Suerte) {
@@ -236,7 +287,7 @@ public class Partida {
 
                         } else{
                             String tipo_casilla = ((Esquina) casilla).getTipo();
-                            System.out.println("Has caido en la calle " + tipo_casilla);
+                            System.out.println("Has caido en " + tipo_casilla);
                             ((Esquina) casilla).aplicarEfecto(jugador,this);
 
                         }
@@ -246,9 +297,9 @@ public class Partida {
 
                 dibujarTablero();
 
-                if (jugador.getDinero()>=0) {
+                if (jugador.getDinero()<=0) {
                     System.out.println(jugador.getNombre()+" te has quedado sin dinero, quedas eliminado de la partida");
-                    jugadores.remove(jugador.getId());
+                    jugadores.remove(jugador);
                     return;
                 }
 
