@@ -216,7 +216,7 @@ public class PartidaDAOImpl implements PartidaDAO{
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return null;
+        return partidas;
     }
 
     @Override

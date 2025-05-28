@@ -76,7 +76,7 @@ public class Main {
                         break;
                     }
 
-                    System.out.println(partidaDAO.obtenerTodos());
+                    System.out.println(partidaDAO.obtener(1));
                     partida = partidaDAO.obtener(partidaDAO.obtenerTodos().getLast().getId());
                     break;
                 }
