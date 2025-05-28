@@ -86,14 +86,14 @@ public class PartidaDAOImpl implements PartidaDAO{
     @Override
     public Partida obtener (int id){
         String sql = "SELECT * FROM partidas WHERE id = ?";
-        String sql2 = "SELECT * FROM cartas_partidas LEFT JOIN cartas ON id = id_cartas where id_partidas = ?";
-        String sql3 = "SELECT * FROM jugadores_partidas LEFT JOIN jugadores ON id = id_jugadores where id_partidas = ?";
+        String sql2 = "SELECT * FROM cartas_partidas LEFT JOIN cartas ON id = carta_id where partida_id = ?";
+        String sql3 = "SELECT * FROM partidas_jugadores LEFT JOIN jugadores ON id = jugador_id where partida_id = ?";
         String sql4 = """
                 SELECT * FROM partidas_jugadores_calles LEFT JOIN calles ON partidas_jugadores_calles.posicion = calles.posicion
-                LEFT JOIN jugadores ON id_jugadores = jugadores.id
-                WHERE partidas.id = ?
+                LEFT JOIN jugadores ON id_jugador = jugadores.id
+                WHERE id_partida = ?
                 """;
-        String sql5 = "SELECT * FROM calles WHERE posicion NOT IN (SELECT posicion FROM partidas_jugadores_calles WHERE id_partidas = ?)";
+        String sql5 = "SELECT * FROM calles WHERE posicion NOT IN (SELECT posicion FROM partidas_jugadores_calles WHERE id_partida = ?)";
 
         try (
                 PreparedStatement pst = conn.prepareStatement(sql);
@@ -146,7 +146,7 @@ public class PartidaDAOImpl implements PartidaDAO{
                             int [] tablaPrecios = {rs4.getInt("alquiler"), rs4.getInt("casa_1"), rs4.getInt("casa_2"), rs4.getInt("casa_3"), rs4.getInt("casa_4"), rs4.getInt("hotel")};
 
                             for (Jugador jugador : jugadores){
-                                if (jugador.getId() == rs4.getInt("id_jugadores")){
+                                if (jugador.getId() == rs4.getInt("id_jugador")){
                                     Normal normal = new Normal(rs4.getInt("posicion"), rs4.getString("nombre"), rs4.getInt("precio"), rs4.getString("color"), rs4.getInt("n_casas"), rs4.getInt("p_edificio"), tablaPrecios, jugador);
                                     jugador.getCalles().add(normal);
                                     casillas.add(normal);
@@ -154,7 +154,7 @@ public class PartidaDAOImpl implements PartidaDAO{
                             }
                         } else {
                             for (Jugador jugador : jugadores){
-                                if (jugador.getId() == rs4.getInt("id_jugadores")){
+                                if (jugador.getId() == rs4.getInt("id_jugador")){
                                     Estacion estacion = new Estacion(rs4.getInt("posicion"), rs4.getString("nombre"), rs4.getInt("precio"), jugador);
                                     jugador.getCalles().add(estacion);
                                     casillas.add(estacion);
@@ -221,7 +221,7 @@ public class PartidaDAOImpl implements PartidaDAO{
         String sql = "UPDATE partidas SET fecha = curdate(), turno = ? WHERE id = ?";
         String sql2 = "UPDATE cartas_partidas SET baraja = ? WHERE carta_id = ? AND partida_id = ?";
         String sql3 = "UPDATE partidas_jugadores SET encarcelado = ?, dinero = ?, posicion = ? WHERE jugador_id = ? AND partida_id = ?";
-        String sql4 = "UPDATE partidas_jugadores_calles SET n_casas = ?, alquiler_mod = ?, jugador_id = ? WHERE partida_id = ? AND posicion = ?";
+        String sql4 = "INSERT INTO partidas_jugadores_calles VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE n_casas = ?, alquiler_mod = ?, id_jugador = ?";
 
         try (
                 PreparedStatement pst = conn.prepareStatement(sql);
@@ -235,14 +235,14 @@ public class PartidaDAOImpl implements PartidaDAO{
 
             //sql2
             for (CartaSuerte carta : partida.getMazoRobo().getBaraja()){
-                pst2.setInt(1,0);
+                pst2.setString(1,"0");
                 pst2.setInt(2,carta.getId());
                 pst2.setInt(3,partida.getId());
                 pst2.addBatch();
             }
 
             for (CartaSuerte carta : partida.getMazoDescarte().getBaraja()){
-                pst2.setInt(1,1);
+                pst2.setString(1,"1");
                 pst2.setInt(2,carta.getId());
                 pst2.setInt(3,partida.getId());
                 pst2.addBatch();
@@ -250,7 +250,7 @@ public class PartidaDAOImpl implements PartidaDAO{
 
             //sql3
             for (Jugador jugador : partida.getJugadores()){
-                pst3.setBoolean(1,jugador.isEncarcelado());
+                pst3.setString(1, String.valueOf(jugador.isEncarcelado()));
                 pst3.setInt(2, jugador.getDinero());
                 pst3.setInt(3,jugador.getPosicion());
                 pst3.setInt(4, jugador.getId());
@@ -258,19 +258,26 @@ public class PartidaDAOImpl implements PartidaDAO{
                 pst3.addBatch();
             }
 
-            //sql4 String sql4 = "UPDATE partidas_jugadores_calles SET n_casas = ?, alquiler_mod = ?, jugador_id = ? WHERE partida_id = ? AND posicion = ?";
+            //sql4 String sql4 = "INSERT INTO partidas_jugadores_calles VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE n_casas = ?, alquiler_mod = ?, jugador_id = ?"
             for (Jugador jugador : partida.getJugadores()){
                 if (!jugador.getCalles().isEmpty()){
                     for (Calle calle : jugador.getCalles()){
+
+                        pst4.setInt(1,jugador.getId());
+                        pst4.setInt(8,jugador.getId());
+                        pst4.setInt(2,partida.getId());
+                        pst4.setInt(3,calle.getPosicion());
+
                         if (calle instanceof Normal){
-                            pst4.setInt(1, ((Normal) calle).getNumCasas());
+                            pst4.setInt(4, ((Normal) calle).getNumCasas());
+                            pst4.setInt(6, ((Normal) calle).getNumCasas());
                         }else {
-                            pst4.setInt(1,0);
+                            pst4.setInt(4,0);
+                            pst4.setInt(6,0);
                         }
-                        pst4.setInt(2,calle.getAlquiler());
-                        pst4.setInt(3,jugador.getId());
-                        pst4.setInt(4,partida.getId());
-                        pst4.setInt(5,calle.getPosicion());
+                        pst4.setInt(5,calle.getAlquiler());
+                        pst4.setInt(7,calle.getAlquiler());
+
                         pst4.addBatch();
                     }
                 }

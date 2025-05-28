@@ -18,7 +18,7 @@ public class EsquinaDAOImpl implements EsquinaDAO{
     public Esquina obtener(int posicion) {
         Esquina esquina = null;
         try (
-                PreparedStatement preparedStatement = conexion.prepareStatement("SELECT * FROM esquina WHERE posicion = ?")
+                PreparedStatement preparedStatement = conexion.prepareStatement("SELECT * FROM esquinas WHERE posicion = ?")
         ) {
             preparedStatement.setInt(1, posicion);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -36,7 +36,7 @@ public class EsquinaDAOImpl implements EsquinaDAO{
     public ArrayList<Esquina> obtenerTodos() {
         ArrayList<Esquina> esquinas = new ArrayList<>();
         try (
-                PreparedStatement preparedStatement = conexion.prepareStatement("SELECT * FROM esquina")
+                PreparedStatement preparedStatement = conexion.prepareStatement("SELECT * FROM esquinas")
         ) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {

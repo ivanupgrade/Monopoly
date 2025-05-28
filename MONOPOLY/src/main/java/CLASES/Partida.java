@@ -95,20 +95,16 @@ public class Partida {
 
     public void cambiarTurno(){
         turno++;
-        turno = Math.floorMod(turno, jugadores.size());
-
     }
+
     public void turnos() {
         Scanner sc = new Scanner(System.in);
-        Jugador jugador = jugadores.get(turno);
+        Jugador jugador = jugadores.get(Math.floorMod(turno, jugadores.size()));
 
         System.out.printf("Es el turno de %s id=%d", jugador.getNombre(), jugador.getId());
-
-
-
+        
         String respuesta = "";
         String nombre_calle;
-
 
         while (!respuesta.equalsIgnoreCase("l")) {
             System.out.println("Pulsa 'l' para lanzar los dados!!!");
@@ -155,12 +151,7 @@ public class Partida {
                     }
                 }
 
-
-
                 dibujarTablero();
-
-
-
 
             } else {
                 System.out.println("comando incorrecto");
@@ -173,13 +164,14 @@ public class Partida {
             respuesta2 = sc.nextInt();
             if (respuesta2 == 1) {
                 cambiarTurno();
+
             } else if (respuesta2 == 2) {
                 System.out.println("Indique la id del jugador con el que desea tradear");
+
                 for (int i = 0; i < jugadores.size(); i++) {
                     System.out.println(i+"."+jugadores.get(i).getNombre());
                 }
                 int id = sc.nextInt();
-
 
                 int respuesta3 = 0;
 
@@ -210,13 +202,7 @@ public class Partida {
                 System.out.println("opcion incorrecta");
             }
         }
-
-
-
     }
-
-
-
 
     public void intercambiar1 (Jugador jugador1, Jugador jugador2){              //dinero por calle
         Scanner sc = new Scanner(System.in);
