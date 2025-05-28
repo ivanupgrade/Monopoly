@@ -1,13 +1,17 @@
 package CLASES;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
 public class Normal extends Calle{
 
     private String color;
     private int numCasas;
     private int precioEdificio;
-    private int[] tablaPrecios;
+    private Integer[] tablaPrecios;
 
-    public Normal(int posicion, String nombre, int precio, String color, int numCasas, int precioEdificio, int[] tablaPrecios, Jugador dueño) {
+    public Normal(int posicion, String nombre, int precio, String color, int numCasas, int precioEdificio, Integer[] tablaPrecios, Jugador dueño) {
         super(posicion, nombre, tablaPrecios[numCasas], precio, dueño);
         this.color = color;
         this.numCasas = numCasas;
@@ -39,11 +43,12 @@ public class Normal extends Calle{
         this.precioEdificio = precioEdificio;
     }
 
-    public int[] getTablaPrecios() {
-        return tablaPrecios;
+    public ArrayList<Integer> getTablaPrecios() {
+        return new ArrayList<>(Arrays.asList(tablaPrecios));
+
     }
 
-    public void setTablaPrecios(int[] tablaPrecios) {
+    public void setTablaPrecios(Integer[] tablaPrecios) {
         this.tablaPrecios = tablaPrecios;
     }
 

@@ -23,7 +23,7 @@ public class NormalDAOImpl implements NormalDAO{
             preparedStatement.setInt(1, posicion);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                int [] tablaPrecios = {resultSet.getInt("alquiler"), resultSet.getInt("casa_1"), resultSet.getInt("casa_2"), resultSet.getInt("casa_3"), resultSet.getInt("casa_4"), resultSet.getInt("hotel")};
+                Integer [] tablaPrecios = {resultSet.getInt("alquiler"), resultSet.getInt("casa_1"), resultSet.getInt("casa_2"), resultSet.getInt("casa_3"), resultSet.getInt("casa_4"), resultSet.getInt("hotel")};
                 return new Normal(resultSet.getInt("posicion"), resultSet.getString("nombre"), resultSet.getInt("precio"), resultSet.getString("color"), 0, resultSet.getInt("p_edificio"), tablaPrecios, null);
             }
         } catch (Exception e) {
@@ -41,7 +41,7 @@ public class NormalDAOImpl implements NormalDAO{
         ) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                int [] tablaPrecios = {resultSet.getInt("casa_1"), resultSet.getInt("casa_2"), resultSet.getInt("casa_3"), resultSet.getInt("casa_4"), resultSet.getInt("hotel")};
+                Integer [] tablaPrecios = {resultSet.getInt("casa_1"), resultSet.getInt("casa_2"), resultSet.getInt("casa_3"), resultSet.getInt("casa_4"), resultSet.getInt("hotel")};
                 normales.add(new Normal(resultSet.getInt("posicion"), resultSet.getString("nombre"), resultSet.getInt("precio"), resultSet.getString("color"), 0, resultSet.getInt("p_edificio"), tablaPrecios, null));
             }
         } catch (Exception e) {
@@ -60,11 +60,11 @@ public class NormalDAOImpl implements NormalDAO{
             preparedStatement.setInt(2, normal.getPrecio());
             preparedStatement.setString(3, normal.getColor());
             preparedStatement.setInt(4, normal.getPrecioEdificio());
-            preparedStatement.setInt(5, normal.getTablaPrecios()[0]);
-            preparedStatement.setInt(6, normal.getTablaPrecios()[1]);
-            preparedStatement.setInt(7, normal.getTablaPrecios()[2]);
-            preparedStatement.setInt(8, normal.getTablaPrecios()[3]);
-            preparedStatement.setInt(9, normal.getTablaPrecios()[4]);
+            preparedStatement.setInt(5, normal.getTablaPrecios().get(0));
+            preparedStatement.setInt(6, normal.getTablaPrecios().get(1));
+            preparedStatement.setInt(7, normal.getTablaPrecios().get(2));
+            preparedStatement.setInt(8, normal.getTablaPrecios().get(3));
+            preparedStatement.setInt(9, normal.getTablaPrecios().get(4));
             preparedStatement.setInt(10, normal.getPosicion());
             preparedStatement.executeUpdate();
         } catch (Exception e) {

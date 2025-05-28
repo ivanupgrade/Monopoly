@@ -54,7 +54,7 @@ public abstract class Calle extends Casilla{
         if (!jugador.getCalles().contains(this)){
             Scanner scanner = new Scanner(System.in);
             if (dueño == null){
-                System.out.println("Esta propiedad esta libre y cuesta "+precio+"");
+                System.out.println("Esta propiedad esta libre y cuesta "+precio+" su alquiler es de: "+alquiler+" "+ ((Normal) this).getTablaPrecios());
                 System.out.println("¿Quieres comprar esta propiedad? (s/n)");
                 String respuesta = scanner.nextLine().toLowerCase();
                 if (respuesta.equals("s")){
