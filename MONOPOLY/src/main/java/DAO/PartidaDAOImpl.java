@@ -143,7 +143,7 @@ public class PartidaDAOImpl implements PartidaDAO{
 
                     while (rs4.next()){
                         if (rs4.getString("tipo").equals("normal")){
-                            int [] tablaPrecios = {rs4.getInt("alquiler"), rs4.getInt("casa_1"), rs4.getInt("casa_2"), rs4.getInt("casa_3"), rs4.getInt("casa_4"), rs4.getInt("hotel")};
+                            Integer [] tablaPrecios = {rs4.getInt("alquiler"), rs4.getInt("casa_1"), rs4.getInt("casa_2"), rs4.getInt("casa_3"), rs4.getInt("casa_4"), rs4.getInt("hotel")};
 
                             for (Jugador jugador : jugadores){
                                 if (jugador.getId() == rs4.getInt("id_jugador")){
@@ -165,7 +165,7 @@ public class PartidaDAOImpl implements PartidaDAO{
 
                     while (rs5.next()){
                         if (rs5.getString("tipo").equals("normal")){
-                            int [] tablaPrecios = {rs5.getInt("alquiler"), rs5.getInt("casa_1"), rs5.getInt("casa_2"), rs5.getInt("casa_3"), rs5.getInt("casa_4"), rs5.getInt("hotel")};
+                            Integer [] tablaPrecios = {rs5.getInt("alquiler"), rs5.getInt("casa_1"), rs5.getInt("casa_2"), rs5.getInt("casa_3"), rs5.getInt("casa_4"), rs5.getInt("hotel")};
                             Normal normal = new Normal(rs5.getInt("posicion"), rs5.getString("nombre"), rs5.getInt("precio"), rs5.getString("color"), 0, rs5.getInt("p_edificio"), tablaPrecios, null);
                             casillas.add(normal);
                         } else {
