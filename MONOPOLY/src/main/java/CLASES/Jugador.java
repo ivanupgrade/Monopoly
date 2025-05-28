@@ -17,7 +17,7 @@ public class Jugador {
         this.nombre = nombre;
         calles = new ArrayList<>();
         encarcelado = false;
-        dinero = 1500;
+        dinero = 150;
     }
 
     public Jugador(int id, int p_ganadas, String nombre, int posicion, int dinero, ArrayList<Calle> calles, boolean encarcelado) {

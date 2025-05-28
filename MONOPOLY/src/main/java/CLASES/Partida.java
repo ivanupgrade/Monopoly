@@ -93,6 +93,10 @@ public class Partida {
 
     }
 
+    public boolean comprobarGanador() {
+        return true;
+    }
+
     public void cambiarTurno(){
         turno++;
     }
@@ -256,8 +260,6 @@ public class Partida {
             }
         }
     }
-
-
 
     public void intercambiar2 (Jugador jugador1, Jugador jugador2){    //calle por dinero
         Scanner sc =new Scanner(System.in);

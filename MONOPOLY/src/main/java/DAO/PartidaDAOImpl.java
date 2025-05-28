@@ -202,13 +202,17 @@ public class PartidaDAOImpl implements PartidaDAO{
     public ArrayList<Partida> obtenerTodos() {
         ArrayList<Partida> partidas = new ArrayList<>();
         String sql = "SELECT * FROM partidas";
+
         try (PreparedStatement pst = conn.prepareStatement(sql);
-             ResultSet rs = pst.executeQuery()) {
+             ResultSet rs = pst.executeQuery()
+            ) {
             while (rs.next()) {
                 Partida partida = new Partida();
                 partida.setFecha(rs.getDate("fecha"));
+                partida.setId(rs.getInt("id"));
                 partidas.add(partida);
             }
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -258,7 +262,7 @@ public class PartidaDAOImpl implements PartidaDAO{
                 pst3.addBatch();
             }
 
-            //sql4 String sql4 = "INSERT INTO partidas_jugadores_calles VALUES (?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE n_casas = ?, alquiler_mod = ?, jugador_id = ?"
+            //sql4
             for (Jugador jugador : partida.getJugadores()){
                 if (!jugador.getCalles().isEmpty()){
                     for (Calle calle : jugador.getCalles()){

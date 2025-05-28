@@ -78,23 +78,27 @@ CREATE TABLE IF NOT EXISTS partidas_jugadores_calles (
     posicion INT,
     n_casas INT,
     alquiler_mod INT,
-    PRIMARY KEY (id_jugador, id_partida, posicion)
+    PRIMARY KEY (id_partida, posicion)
 );
 
 ALTER TABLE cartas_partidas ADD FOREIGN KEY (carta_id) REFERENCES cartas(id);
-ALTER TABLE cartas_partidas ADD FOREIGN KEY (partida_id) REFERENCES partidas(id);
+ALTER TABLE cartas_partidas ADD FOREIGN KEY (partida_id) REFERENCES partidas(id)
+ON DELETE CASCADE;
 
 ALTER TABLE suerte ADD FOREIGN KEY (posicion) REFERENCES casillas(posicion);
 ALTER TABLE esquinas ADD FOREIGN KEY (posicion) REFERENCES casillas(posicion);
 ALTER TABLE calles ADD FOREIGN KEY (posicion) REFERENCES casillas(posicion);
 
 ALTER TABLE partidas_jugadores ADD FOREIGN KEY (jugador_id) REFERENCES jugadores(id);
-ALTER TABLE partidas_jugadores ADD FOREIGN KEY (partida_id) REFERENCES partidas(id);
-ALTER TABLE partidas_casillas ADD FOREIGN KEY (id_partida) REFERENCES partidas(id);
+ALTER TABLE partidas_jugadores ADD FOREIGN KEY (partida_id) REFERENCES partidas(id)
+ON DELETE CASCADE;
+ALTER TABLE partidas_casillas ADD FOREIGN KEY (id_partida) REFERENCES partidas(id)
+ON DELETE CASCADE;
 ALTER TABLE partidas_casillas ADD FOREIGN KEY (posicion) REFERENCES casillas(posicion);
 
 ALTER TABLE partidas_jugadores_calles ADD FOREIGN KEY (id_jugador) REFERENCES jugadores(id);
-ALTER TABLE partidas_jugadores_calles ADD FOREIGN KEY (id_partida) REFERENCES partidas(id);
+ALTER TABLE partidas_jugadores_calles ADD FOREIGN KEY (id_partida) REFERENCES partidas(id)
+ON DELETE CASCADE;
 ALTER TABLE partidas_jugadores_calles ADD FOREIGN KEY (posicion) REFERENCES calles(posicion);
 
 INSERT INTO casillas VALUES
