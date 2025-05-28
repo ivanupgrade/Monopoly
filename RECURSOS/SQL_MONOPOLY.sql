@@ -108,8 +108,8 @@ INSERT INTO casillas VALUES
 (21), (22), (23), (24), (25), (26), (27);
 
 INSERT INTO calles VALUES
-(1, 60, 2, 'Ronda de Vicente', 'normal', 'marrón', 50, 10, 30, 90, 160, 250),
-(2, 60, 4, 'Calle de Bravo Murillo', 'normal', 'marrón', 50, 20, 60, 180, 320, 450),
+(1, 60, 2, 'Ronda de Vicente', 'normal', 'marron', 50, 10, 30, 90, 160, 250),
+(2, 60, 4, 'Calle de Bravo Murillo', 'normal', 'marron', 50, 20, 60, 180, 320, 450),
 
 (5, 100, 6, 'Glorieta de Cuatro Caminos', 'normal', 'celeste', 50, 30, 90, 270, 400, 550),
 (6, 100, 6, 'Avenida de Reina Victoria', 'normal', 'celeste', 50, 30, 90, 270, 400, 550),
@@ -117,8 +117,8 @@ INSERT INTO calles VALUES
 (8, 140, 10, 'Calle de Fuencarral', 'normal', 'rosa', 100, 50, 150, 450, 625, 750),
 (9, 160, 12, 'Calle de Velázquez', 'normal', 'rosa', 100, 60, 180, 500, 700, 900),
 
-(12, 180, 14, 'Avenida de América', 'normal', 'naranja', 100, 70, 200, 550, 750, 950),
-(13, 200, 16, 'Calle de Cea Bermúdez', 'normal', 'naranja', 100, 80, 220, 600, 800, 1000),
+(12, 180, 14, 'Avenida de América', 'normal', 'morado', 100, 70, 200, 550, 750, 950),
+(13, 200, 16, 'Calle de Cea Bermúdez', 'normal', 'morado', 100, 80, 220, 600, 800, 1000),
 
 (15, 220, 18, 'Avenida de Felipe II', 'normal', 'rojo', 150, 90, 250, 700, 875, 1050),
 (16, 240, 20, 'Calle de José Ortega y Gasset', 'normal', 'rojo', 150, 100, 300, 750, 925, 1100),
