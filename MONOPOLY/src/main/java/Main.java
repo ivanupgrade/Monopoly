@@ -1,8 +1,10 @@
 import CLASES.Jugador;
 import CLASES.Partida;
+import DAO.Conexion;
 import DAO.JugadorDAOImpl;
 import DAO.PartidaDAOImpl;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -76,8 +78,12 @@ public class Main {
                         break;
                     }
 
-                    System.out.println(partidaDAO.obtener(1));
                     partida = partidaDAO.obtener(partidaDAO.obtenerTodos().getLast().getId());
+
+                    for (Jugador jugador : partida.getJugadores()) {
+                        jugador.setDinero(1500);
+                    }
+
                     break;
                 }
 
@@ -118,6 +124,12 @@ public class Main {
         while (partida.comprobarGanador()){
             partida.turnos();
             partidaDAO.actualizar(partida);
+        }
+
+        try {
+            Conexion.getConexion().close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }
