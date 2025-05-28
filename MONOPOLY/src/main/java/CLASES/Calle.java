@@ -54,6 +54,7 @@ public abstract class Calle extends Casilla{
         if (!jugador.getCalles().contains(this)){
             Scanner scanner = new Scanner(System.in);
             if (dueño == null){
+                System.out.println("Esta propiedad esta libre y cuesta "+precio+"");
                 System.out.println("¿Quieres comprar esta propiedad? (s/n)");
                 String respuesta = scanner.nextLine().toLowerCase();
                 if (respuesta.equals("s")){
@@ -77,4 +78,13 @@ public abstract class Calle extends Casilla{
     }
 
     public abstract void modificarAlquiler(Jugador jugador);
+
+    @Override
+    public String toString() {
+        return "Calle{" +
+                "precio=" + precio +
+                ", alquiler=" + alquiler +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }

@@ -53,17 +53,37 @@ public class Normal extends Calle{
     }
 
     public void construirCasa (Jugador jugador){
-        if (numCasas < 5) {
-            if (jugador.getDinero() > precioEdificio) {
-                jugador.setDinero(jugador.getDinero()-precioEdificio);
-                numCasas++;
-                modificarAlquiler(jugador);
-            }else {
-                System.out.println("Dinero insuficiente");
-            }
+        int contador=0;
+        for (int i = 0; i < jugador.getCalles().size(); i++) {
+            if (color.equalsIgnoreCase(((Normal) jugador.getCalles().get(i)).getColor())) {
+                contador++;
 
-        }else {
-            System.out.println("Has alcanzado el numero máximo de casas");
+            }
         }
+        if (contador==2) {
+            if (numCasas < 5) {
+                if (jugador.getDinero() > precioEdificio) {
+                    jugador.setDinero(jugador.getDinero()-precioEdificio);
+                    numCasas++;
+                    modificarAlquiler(jugador);
+                }else {
+                    System.out.println("Dinero insuficiente");
+                }
+
+            }else {
+                System.out.println("Has alcanzado el numero máximo de casas");
+            }
+        }else {
+            System.out.println("No tienes todas las propiedades de este color");
+        }
+
+    }
+
+    @Override
+    public String toString() {
+        return "Normal{" +
+                super.getNombre()+
+                ", color='" + color + '\'' +
+                '}';
     }
 }

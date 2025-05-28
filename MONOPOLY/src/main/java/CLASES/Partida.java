@@ -94,6 +94,11 @@ public class Partida {
     }
 
     public boolean comprobarGanador() {
+        if (jugadores.size()==1) {
+            System.out.println("Felicidades "+jugadores.getFirst()+" has ganado");
+            jugadores.getFirst().setP_ganadas(jugadores.getFirst().getP_ganadas()+1);
+            return false;
+        }
         return true;
     }
 
@@ -157,14 +162,21 @@ public class Partida {
 
                 dibujarTablero();
 
+                if (jugador.getDinero()>=0) {
+                    System.out.println(jugador.getNombre()+" te has quedado sin dinero, quedas eliminado de la partida");
+                    jugadores.remove(jugador.getId());
+                    return;
+                }
+
+
             } else {
                 System.out.println("comando incorrecto");
             }
         }
 
         int respuesta2=0;
-        while (respuesta2<=0 || respuesta2>2){
-            System.out.printf("¿QUE DESEAS REALIZAR? %n 1.Continuar %n 2.Realizar un intercambio");
+        while (respuesta2<=0 || respuesta2>3){
+            System.out.printf("¿QUE DESEAS REALIZAR? %n 1.Continuar %n 2.Realizar un intercambio %n 3.Edificar%n");
             respuesta2 = sc.nextInt();
             if (respuesta2 == 1) {
                 cambiarTurno();
@@ -180,7 +192,7 @@ public class Partida {
                 int respuesta3 = 0;
 
                 while (true){
-                    System.out.printf("indica el metodo de intercambio %n 1.Comprar propiedad %n 2.Vender propiedad %n 3.Intercambiar propiedad");
+                    System.out.printf("indica el metodo de intercambio %n 1.Comprar propiedad %n 2.Vender propiedad %n 3.Intercambiar propiedad %n");
                     respuesta3= sc.nextInt();
 
                     if (respuesta3==1){
@@ -202,11 +214,27 @@ public class Partida {
 
                 cambiarTurno();
 
+            }else if (respuesta2==3){
+                while (true){
+                    for (int i = 0; i < jugador.getCalles().size(); i++) {
+                        System.out.println(i+"."+jugador.getCalles().get(i));
+                    }
+                    System.out.println("que casilla quieres modificar?");
+                    int id_casilla= sc.nextInt();
+                    if (id_casilla<0 || id_casilla > jugador.getCalles().size()) {
+                        System.out.println("Selecciona una casilla existente");
+                    }else {
+                        ((Normal) jugador.getCalles().get(id_casilla)).construirCasa(jugador);
+                        break;
+                    }
+                    
+                }
             }else {
                 System.out.println("opcion incorrecta");
             }
         }
     }
+
 
     public void intercambiar1 (Jugador jugador1, Jugador jugador2){              //dinero por calle
         Scanner sc = new Scanner(System.in);
@@ -260,6 +288,7 @@ public class Partida {
             }
         }
     }
+
 
     public void intercambiar2 (Jugador jugador1, Jugador jugador2){    //calle por dinero
         Scanner sc =new Scanner(System.in);
@@ -380,5 +409,13 @@ public class Partida {
         Random random = new Random();
         int dado = random.nextInt(1,7);
         return dado;
+    }
+
+    @Override
+    public String toString() {
+        return "Partida{" +
+                "id=" + id +
+                ", fecha=" + fecha +
+                '}';
     }
 }

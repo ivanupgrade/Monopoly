@@ -12,4 +12,5 @@ public class Suerte extends Casilla {
         carta.aplicarEfecto(jugador, partida);
         partida.getMazoDescarte().getBaraja().add(carta);
     }
+
 }

@@ -24,4 +24,12 @@ public class Esquina extends Casilla {
             jugador.setEncarcelado(true);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Esquina{" +
+                super.getPosicion()+
+                ", tipo='" + tipo + '\'' +
+                '}';
+    }
 }
