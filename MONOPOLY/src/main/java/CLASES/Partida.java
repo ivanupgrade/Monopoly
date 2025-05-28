@@ -245,7 +245,7 @@ public class Partida {
         Scanner sc = new Scanner(System.in);
         Jugador jugador = jugadores.get(Math.floorMod(turno, jugadores.size()));
 
-        System.out.printf("Es el turno de %s: tienes %d", jugador.getNombre(), jugador.getDinero());
+        System.out.printf("Es el turno de %s: tienes %d%n", jugador.getNombre(), jugador.getDinero());
         
         String respuesta = "";
         String nombre_calle;
@@ -313,6 +313,8 @@ public class Partida {
         while (respuesta2<=0 || respuesta2>3){
             System.out.printf("¿QUE DESEAS REALIZAR? %n 1.Continuar %n 2.Realizar un intercambio %n 3.Edificar%n");
             respuesta2 = sc.nextInt();
+            sc.nextLine();
+
             if (respuesta2 == 1) {
                 cambiarTurno();
 
@@ -323,12 +325,14 @@ public class Partida {
                     System.out.println(i+"."+jugadores.get(i).getNombre());
                 }
                 int id = sc.nextInt();
+                sc.nextLine();
 
                 int respuesta3 = 0;
 
                 while (true){
                     System.out.printf("indica el metodo de intercambio %n 1.Comprar propiedad %n 2.Vender propiedad %n 3.Intercambiar propiedad %n");
                     respuesta3= sc.nextInt();
+                    sc.nextLine();
 
                     if (respuesta3==1){
                         intercambiar1(jugador,jugadores.get(id));
@@ -356,6 +360,8 @@ public class Partida {
                     }
                     System.out.println("que casilla quieres modificar?");
                     int id_casilla= sc.nextInt();
+                    sc.nextLine();
+
                     if (id_casilla<0 || id_casilla > jugador.getCalles().size()) {
                         System.out.println("Selecciona una casilla existente");
                     }else {
@@ -378,6 +384,8 @@ public class Partida {
         while (true){
             System.out.println("Indica cuanto dinero quieres ofrecer");
             dinero_ofrecido = sc.nextInt();
+            sc.nextLine();
+
             if (dinero_ofrecido > jugador1.getDinero()) {
                 System.out.println("insuficiente dinero, solo dispones de "+jugador1.getDinero()+" dólares)");
             }else {
@@ -396,6 +404,8 @@ public class Partida {
                 System.out.println(i+"."+jugador2.getCalles().get(i).getNombre());
             }
             id_propiedad_recibida= sc.nextInt();
+            sc.nextLine();
+
             if (id_propiedad_recibida > jugador2.getCalles().size()-1  ||  id_propiedad_recibida < 0) {
                 System.out.println("id de propiedad incorrecta, inténtelo de nuevo");
             }else {
@@ -438,6 +448,8 @@ public class Partida {
                 System.out.println(i+"."+jugador1.getCalles().get(i).getNombre());
             }
             id_propiedad_ofrecida= sc.nextInt();
+            sc.nextLine();
+
             if (id_propiedad_ofrecida > jugador1.getCalles().size()-1  ||  id_propiedad_ofrecida < 0) {
                 System.out.println("id de propiedad incorrecta, inténtelo de nuevo");
             }else {
@@ -448,6 +460,8 @@ public class Partida {
         while (true){
             System.out.println("Indica cuanto dinero quieres recibir");
             dinero_recibido = sc.nextInt();
+            sc.nextLine();
+
             if (dinero_recibido > jugador2.getDinero()) {
                 System.out.println("El jugador no dispone de ese dinero (tiene "+jugador2.getDinero()+" dólares)");
             }else {
@@ -490,6 +504,8 @@ public class Partida {
                 System.out.println(i+"."+jugador1.getCalles().get(i).getNombre());
             }
             id_propiedad_ofrecida= sc.nextInt();
+            sc.nextLine();
+
             if (id_propiedad_ofrecida > jugador1.getCalles().size()-1  ||  id_propiedad_ofrecida < 0) {
                 System.out.println("id de propiedad incorrecta, inténtelo de nuevo");
             }else {
@@ -507,6 +523,8 @@ public class Partida {
                     System.out.println(i+"."+jugador2.getCalles().get(i).getNombre());
                 }
                 id_propiedad_recibida= sc.nextInt();
+                sc.nextLine();
+
                 if (id_propiedad_recibida > jugador2.getCalles().size()-1  ||  id_propiedad_recibida < 0) {
                     System.out.println("id de propiedad incorrecta, inténtelo de nuevo");
                 }else {
