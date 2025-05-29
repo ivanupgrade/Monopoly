@@ -131,6 +131,7 @@ public class Main {
             partidaDAO.actualizar(partida);
         }
 
+        partidaDAO.actualizar(partida);
         partidaDAO.eliminar(partida.getId());
 
         try {

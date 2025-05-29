@@ -29,7 +29,6 @@ public class Jugador {
         this.nombre = nombre;
         calles = new ArrayList<>();
         encarcelado = false;
-        dinero = 150;
     }
 
     /**
