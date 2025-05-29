@@ -126,6 +126,8 @@ public class Main {
             throw new RuntimeException(e);
         }
 
+        partidaDAO.actualizar(partida);
+
         while (partida.comprobarGanador()){
             partida.turnos();
             partidaDAO.actualizar(partida);
