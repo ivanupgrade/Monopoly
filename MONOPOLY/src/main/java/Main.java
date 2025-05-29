@@ -20,6 +20,7 @@ public class Main {
         while (true){
             System.out.println("¿Quieres empezar una partida nueva o continuar una existente? (1/2)");
             respuesta = scanner.nextLine();
+            System.out.println();
 
             if (respuesta.equals("1")){
                 while (true){
@@ -30,10 +31,12 @@ public class Main {
                         System.out.println("¿Cuantos jugadores quieres crear?");
                         int numJugadores = scanner.nextInt();
                         scanner.nextLine();
+                        System.out.println();
 
                         for (int i = 0; i < numJugadores; i++) {
                             System.out.println("Introduce el nombre del jugador: ");
                             String nombreJugador = scanner.nextLine();
+                            System.out.println();
 
                             jugadorDAO.insertar(new Jugador(nombreJugador));
                         }
@@ -50,6 +53,7 @@ public class Main {
                         System.out.println("¿Cuantos jugadores van a jugar? (2-4)");
                         int numJugadores = scanner.nextInt();
                         scanner.nextLine();
+                        System.out.println();
 
                         if (numJugadores < 2 || numJugadores > 4) {
                             System.out.println("Numero de jugadores no valido. Debe ser entre 2 y 4.");
@@ -95,6 +99,7 @@ public class Main {
 
                     int idPartida = scanner.nextInt();
                     scanner.nextLine();
+                    System.out.println();
 
                     if (partidaDAO.obtener(idPartida) == null) {
                         System.out.println("Partida no encontrada. Por favor, introduce un ID valido.");
@@ -125,6 +130,8 @@ public class Main {
             partida.turnos();
             partidaDAO.actualizar(partida);
         }
+
+        partidaDAO.eliminar(partida.getId());
 
         try {
             Conexion.getConexion().close();

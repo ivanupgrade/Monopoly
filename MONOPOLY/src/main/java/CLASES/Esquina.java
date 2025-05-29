@@ -40,7 +40,7 @@ public class Esquina extends Casilla {
      */
     @Override
     public void aplicarEfecto(Jugador jugador, Partida partida) {
-        if (tipo.equals("ve_carcel")){
+        if (tipo.equalsIgnoreCase("ve_carcel")){
             jugador.setPosicion(7);
             jugador.setEncarcelado(true);
         }

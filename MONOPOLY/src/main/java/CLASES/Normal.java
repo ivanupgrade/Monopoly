@@ -119,9 +119,10 @@ public class Normal extends Calle{
     public void construirCasa (Jugador jugador){
         int contador=0;
         for (int i = 0; i < jugador.getCalles().size(); i++) {
-            if (color.equalsIgnoreCase(((Normal) jugador.getCalles().get(i)).getColor())) {
-                contador++;
-
+            if (jugador.getCalles().get(i) instanceof Normal){
+                if (color.equalsIgnoreCase(((Normal) jugador.getCalles().get(i)).getColor())) {
+                    contador++;
+                }
             }
         }
         if (contador==2) {

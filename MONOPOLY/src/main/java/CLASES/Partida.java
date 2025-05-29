@@ -253,6 +253,7 @@ public class Partida {
         while (!respuesta.equalsIgnoreCase("l")) {
             System.out.println("Pulsa 'l' para lanzar los dados!!!");
             respuesta = sc.nextLine();
+            System.out.println();
 
             if (respuesta.equalsIgnoreCase("l")) {
 
@@ -314,6 +315,7 @@ public class Partida {
             System.out.printf("¿QUE DESEAS REALIZAR? %n 1.Continuar %n 2.Realizar un intercambio %n 3.Edificar%n");
             respuesta2 = sc.nextInt();
             sc.nextLine();
+            System.out.println();
 
             if (respuesta2 == 1) {
                 cambiarTurno();
@@ -326,6 +328,7 @@ public class Partida {
                 }
                 int id = sc.nextInt();
                 sc.nextLine();
+                System.out.println();
 
                 int respuesta3 = 0;
 
@@ -333,6 +336,7 @@ public class Partida {
                     System.out.printf("indica el metodo de intercambio %n 1.Comprar propiedad %n 2.Vender propiedad %n 3.Intercambiar propiedad %n");
                     respuesta3= sc.nextInt();
                     sc.nextLine();
+                    System.out.println();
 
                     if (respuesta3==1){
                         intercambiar1(jugador,jugadores.get(id));
@@ -356,11 +360,15 @@ public class Partida {
             }else if (respuesta2==3){
                 while (true){
                     for (int i = 0; i < jugador.getCalles().size(); i++) {
-                        System.out.println(i+"."+jugador.getCalles().get(i));
+                        if (jugador.getCalles().get(i) instanceof Normal){
+                            System.out.println(i+"."+jugador.getCalles().get(i));
+                        }
                     }
-                    System.out.println("que casilla quieres modificar?");
+
+                    System.out.println("¿Que casilla quieres modificar?");
                     int id_casilla= sc.nextInt();
                     sc.nextLine();
+                    System.out.println();
 
                     if (id_casilla<0 || id_casilla > jugador.getCalles().size()) {
                         System.out.println("Selecciona una casilla existente");
@@ -370,6 +378,9 @@ public class Partida {
                     }
                     
                 }
+
+                cambiarTurno();
+
             }else {
                 System.out.println("opcion incorrecta");
             }
@@ -385,6 +396,7 @@ public class Partida {
             System.out.println("Indica cuanto dinero quieres ofrecer");
             dinero_ofrecido = sc.nextInt();
             sc.nextLine();
+            System.out.println();
 
             if (dinero_ofrecido > jugador1.getDinero()) {
                 System.out.println("insuficiente dinero, solo dispones de "+jugador1.getDinero()+" dólares)");
@@ -405,6 +417,7 @@ public class Partida {
             }
             id_propiedad_recibida= sc.nextInt();
             sc.nextLine();
+            System.out.println();
 
             if (id_propiedad_recibida > jugador2.getCalles().size()-1  ||  id_propiedad_recibida < 0) {
                 System.out.println("id de propiedad incorrecta, inténtelo de nuevo");
@@ -412,9 +425,12 @@ public class Partida {
                 break;
             }
         }
+
         while (true){
             System.out.println(jugador2.getNombre()+" deseas aceptar el intercambio de tu calle "+jugador2.getCalles().get(id_propiedad_recibida).getNombre()+" por "+dinero_ofrecido+" dólares? (s/n)");
             String respuesta= sc.nextLine();
+            System.out.println();
+
             if (respuesta.equalsIgnoreCase("s")) {
                 System.out.println("Intercambio aceptado!!");
 
@@ -449,6 +465,7 @@ public class Partida {
             }
             id_propiedad_ofrecida= sc.nextInt();
             sc.nextLine();
+            System.out.println();
 
             if (id_propiedad_ofrecida > jugador1.getCalles().size()-1  ||  id_propiedad_ofrecida < 0) {
                 System.out.println("id de propiedad incorrecta, inténtelo de nuevo");
@@ -461,6 +478,7 @@ public class Partida {
             System.out.println("Indica cuanto dinero quieres recibir");
             dinero_recibido = sc.nextInt();
             sc.nextLine();
+            System.out.println();
 
             if (dinero_recibido > jugador2.getDinero()) {
                 System.out.println("El jugador no dispone de ese dinero (tiene "+jugador2.getDinero()+" dólares)");
@@ -471,6 +489,8 @@ public class Partida {
         while (true){
             System.out.println(jugador2.getNombre()+" deseas pagar "+dinero_recibido+" dólares por la calle "+jugador2.getCalles().get(id_propiedad_ofrecida).getNombre()+"? (s/n)");
             String respuesta= sc.nextLine();
+            System.out.println();
+
             if (respuesta.equalsIgnoreCase("s")) {
                 System.out.println("Intercambio aceptado!!");
 
@@ -505,6 +525,7 @@ public class Partida {
             }
             id_propiedad_ofrecida= sc.nextInt();
             sc.nextLine();
+            System.out.println();
 
             if (id_propiedad_ofrecida > jugador1.getCalles().size()-1  ||  id_propiedad_ofrecida < 0) {
                 System.out.println("id de propiedad incorrecta, inténtelo de nuevo");
@@ -524,6 +545,7 @@ public class Partida {
                 }
                 id_propiedad_recibida= sc.nextInt();
                 sc.nextLine();
+                System.out.println();
 
                 if (id_propiedad_recibida > jugador2.getCalles().size()-1  ||  id_propiedad_recibida < 0) {
                     System.out.println("id de propiedad incorrecta, inténtelo de nuevo");
@@ -536,6 +558,8 @@ public class Partida {
         while (true){
             System.out.println(jugador2.getNombre()+" deseas aceptar el intercambio de la calle "+jugador1.getCalles().get(id_propiedad_ofrecida).getNombre()+" por tu calle "+jugador2.getCalles().get(id_propiedad_recibida).getNombre()+"? (s/n)");
             String respuesta= sc.nextLine();
+            System.out.println();
+
             if (respuesta.equalsIgnoreCase("s")) {
                 System.out.println("Intercambio aceptado!!");
                 Calle calle_jugador1=jugador1.getCalles().get(id_propiedad_ofrecida);

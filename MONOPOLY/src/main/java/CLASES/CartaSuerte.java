@@ -32,8 +32,10 @@ public class CartaSuerte implements Efectos{
     }
 
     /**
-     * Returns a string representation of the CartaSuerte object.
-     * @return A string containing the card's ID, type, value, and description.
+     * Applies the effect of the CartaSuerte card to a player in the game.
+     * @param jugador The player to whom the effect will be applied.
+     * @param partida The current game instance.
+     *
      */
     @Override
     public void aplicarEfecto(Jugador jugador, Partida partida) {
@@ -49,7 +51,7 @@ public class CartaSuerte implements Efectos{
             int mov_casilla;
 
             if (valor == 21){
-                jugador.setPosicion(27);
+                jugador.setPosicion(21);
 
             } else {
                 if (valor < 0) {
@@ -76,8 +78,8 @@ public class CartaSuerte implements Efectos{
     }
 
     /**
-     * Returns a string representation of the CartaSuerte object.
-     * @return A string containing the card's ID, type, value, and description.
+     * Returns the unique identifier for the CartaSuerte card.
+     * @return The unique identifier of the card.
      */
     public int getId() {
         return id;
@@ -93,7 +95,7 @@ public class CartaSuerte implements Efectos{
 
     /**
      * Returns the type of effect the CartaSuerte card has.
-     * @return The type of effect (e.g., "pagar", "cobrar", "mover").
+     * @return The type of effect (e.g., "pagar", "cobrar", "veA").
      */
     public String getTipo() {
         return tipo;

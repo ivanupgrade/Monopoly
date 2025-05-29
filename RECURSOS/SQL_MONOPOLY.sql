@@ -136,13 +136,13 @@ INSERT INTO calles (posicion, precio, alquiler, nombre, tipo) VALUES
 (3, 200, 25, 'Estacion del Norte', 'estacion'),
 (11, 200, 25, 'Estacion de Goya', 'estacion'),
 (17, 200, 25, 'Estacion de Delicias', 'estacion'),
-(25, 200, 25, 'Estacion de Mediodía', 'estacion');
+(25, 200, 25, 'Estacion de Mediodia', 'estacion');
 
 INSERT INTO esquinas VALUES
 ('SALIDA', 0),
 ('CARCEL', 7),
 ('PARKING', 14),
-('Ve_carcel', 21);
+('VE_CARCEL', 21);
 
 INSERT INTO suerte VALUES
 (4),
@@ -151,30 +151,30 @@ INSERT INTO suerte VALUES
 (24);
 
 INSERT INTO cartas (tipo, valor, descripcion) VALUES
-('cobrar', 100, 'Recibes un reembolso de Hacienda. Cobra 100€.'),
-('pagar', 50, 'Vas al medico. Paga 50€.'),
-('cobrar', 100, 'Recoges un premio de fotografia en “Calle de Fuencarral”. Cobra 100€.'),
-('pagar', 150, 'Paga la matricula de la universidad. 150€.'),
-('cobrar', 25, 'Cobra 25€ de cada jugador por ayudarles con sus impuestos.'),
-('cobrar', 10, 'Tu cumpleaños. Cada jugador te da 10€.'),
-('veA', 1, 'Ve directamente a “Ronda de Vicente”. Si pasas por la salida, cobra 200€.'),
-('cobrar', 45, 'Te devuelven dinero por exceso en tu tarifa de luz. Cobra 45€.'),
-('pagar', 10, 'Multa por tirar basura en la calle. Paga 10€.'),
-('cobrar', 200, 'Ganas una beca de estudios. Cobra 200€.'),
-('pagar', 50, 'Paga 50€ por tratamiento dental.'),
-('pagar', 100, 'Tu coche necesita reparacion. Paga 100€.'),
-('cobrar', 20, 'Fuiste voluntario en un evento. Cobra 20€.'),
-('pagar', 50, 'Has perdido la cartera. Pierdes 50€.'),
-('cobrar', 200, '¡Has ganado la loteria! Cobra 200€ del banco.'),
-('pagar', 50, 'Te multan por exceso de velocidad en Gran Via. Paga 50€.'),
-('veA', 17, 'Ve directamente a “Estacion de Delicias”. Si pasas por la salida, cobra 200€.'),
-('cobrar', 150, 'La ciudad te paga por obras en Paseo del Prado. Recibe 150€.'),
-('pagar', 100, 'Has sido elegido presidente de la comunidad. Paga 100€ a cada jugador.'),
-('veA', 27, 'Avanza hasta la calle “Paseo del Rey”. Si pasas por la salida, cobra 200€.'),
+('cobrar', 100, 'Recibes un reembolso de Hacienda. Cobra 100.'),
+('pagar', 50, 'Vas al medico. Paga 50.'),
+('cobrar', 100, 'Recoges un premio de fotografia en “Calle de Fuencarral”. Cobra 100.'),
+('pagar', 150, 'Paga la matricula de la universidad. 150.'),
+('cobrar', 25, 'Cobra 25 de cada jugador por ayudarles con sus impuestos.'),
+('cobrar', 10, 'Tu cumpleaños. Cada jugador te da 10.'),
+('veA', 1, 'Ve directamente a “Ronda de Vicente”. Si pasas por la salida, cobra 200.'),
+('cobrar', 45, 'Te devuelven dinero por exceso en tu tarifa de luz. Cobra 45.'),
+('pagar', 10, 'Multa por tirar basura en la calle. Paga 10.'),
+('cobrar', 200, 'Ganas una beca de estudios. Cobra 200.'),
+('pagar', 50, 'Paga 50 por tratamiento dental.'),
+('pagar', 100, 'Tu coche necesita reparacion. Paga 100.'),
+('cobrar', 20, 'Fuiste voluntario en un evento. Cobra 20.'),
+('pagar', 50, 'Has perdido la cartera. Pierdes 50.'),
+('cobrar', 200, '¡Has ganado la loteria! Cobra 200 del banco.'),
+('pagar', 50, 'Te multan por exceso de velocidad en Gran Via. Paga 50.'),
+('veA', 17, 'Ve directamente a “Estacion de Delicias”. Si pasas por la salida, cobra 200.'),
+('cobrar', 150, 'La ciudad te paga por obras en Paseo del Prado. Recibe 150.'),
+('pagar', 100, 'Has sido elegido presidente de la comunidad. Paga 100 a cada jugador.'),
+('veA', 27, 'Avanza hasta la calle “Paseo del Rey”. Si pasas por la salida, cobra 200.'),
 ('veA', -3, 'Retrocede tres casillas.'),
 ('veA', 21, 'Vas a la carcel por hacer botellon. Ve directamente sin pasar por la salida.'),
-('veA', 5, 'Avanza hasta “Glorieta de Cuatro Caminos”. Si pasas por la salida, cobra 200€.'),
-('pagar', 15, 'Multa por aparcar en doble fila. Paga 15€.'),
-('cobrar', 100, 'Recibes una herencia. Cobra 100€.'),
-('cobrar', 75, 'Tus acciones suben de valor. Cobra 75€.'),
-('veA', 11, 'Ve a “Estacion de Goya”. Si pasas por la salida, cobra 200€.');
+('veA', 5, 'Avanza hasta “Glorieta de Cuatro Caminos”. Si pasas por la salida, cobra 200.'),
+('pagar', 15, 'Multa por aparcar en doble fila. Paga 15.'),
+('cobrar', 100, 'Recibes una herencia. Cobra 100.'),
+('cobrar', 75, 'Tus acciones suben de valor. Cobra 75.'),
+('veA', 11, 'Ve a “Estacion de Goya”. Si pasas por la salida, cobra 200.');

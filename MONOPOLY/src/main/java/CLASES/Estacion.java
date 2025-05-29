@@ -23,11 +23,12 @@ public class Estacion extends Calle{
     @Override
     public void modificarAlquiler(Jugador jugador) {
         setAlquiler(25);
-        for (Calle calle : jugador.getCalles()){
-            if (calle instanceof Estacion){
-                setAlquiler(getAlquiler()*2);
+        for (Calle calle : jugador.getCalles()) {
+            if (calle instanceof Estacion) {
+                if (calle != this) {
+                    setAlquiler(getAlquiler() * 2);
+                }
             }
         }
     }
-
 }
