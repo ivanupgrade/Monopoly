@@ -123,7 +123,7 @@ INSERT INTO calles VALUES
 (15, 220, 18, 'Avenida de Felipe II', 'normal', 'rojo', 150, 90, 250, 700, 875, 1050),
 (16, 240, 20, 'Calle de Jose Ortega y Gasset', 'normal', 'rojo', 150, 100, 300, 750, 925, 1100),
 
-(19, 260, 22, 'Avenida de America', 'normal', 'amarillo', 150, 110, 330, 800, 975, 1150),
+(19, 260, 22, 'Calle Alcala', 'normal', 'amarillo', 150, 110, 330, 800, 975, 1150),
 (20, 280, 24, 'Calle de Serrano', 'normal', 'amarillo', 150, 120, 360, 850, 1025, 1200),
 
 (22, 300, 26, 'Gran Via', 'normal', 'verde', 200, 130, 390, 900, 1100, 1275),
@@ -155,8 +155,6 @@ INSERT INTO cartas (tipo, valor, descripcion) VALUES
 ('pagar', 50, 'Vas al medico. Paga 50.'),
 ('cobrar', 100, 'Recoges un premio de fotografia en “Calle de Fuencarral”. Cobra 100.'),
 ('pagar', 150, 'Paga la matricula de la universidad. 150.'),
-('cobrar', 25, 'Cobra 25 de cada jugador por ayudarles con sus impuestos.'),
-('cobrar', 10, 'Tu cumpleaños. Cada jugador te da 10.'),
 ('veA', 1, 'Ve directamente a “Ronda de Vicente”. Si pasas por la salida, cobra 200.'),
 ('cobrar', 45, 'Te devuelven dinero por exceso en tu tarifa de luz. Cobra 45.'),
 ('pagar', 10, 'Multa por tirar basura en la calle. Paga 10.'),
