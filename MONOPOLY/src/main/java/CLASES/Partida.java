@@ -5,6 +5,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.*;
 
+/**
+ * Partida class represents a game of Monopoly.
+ * It contains information about the game state, including players, decks, and the game board.
+ * It also provides methods for managing turns, drawing the board, and checking for winners.
+ */
 public class Partida {
 
     private int id;
@@ -15,10 +20,24 @@ public class Partida {
     private ArrayList<Casilla> casillas;
     private int turno;
 
+    /**
+     * Default constructor initializes the partida with empty values.
+     */
     public Partida() {
 
     }
 
+    /**
+     * Constructor to initialize a Partida with specific values.
+     *
+     * @param id          the unique identifier for the partida
+     * @param fecha       the date of the partida
+     * @param mazoRobo    the deck of cards for drawing
+     * @param mazoDescarte the deck of discarded cards
+     * @param jugadores   the list of players in the partida
+     * @param casillas    the list of board squares in the partida
+     * @param turno       the current turn number
+     */
     public Partida(int id, Date fecha, Baraja mazoRobo, Baraja mazoDescarte, ArrayList<Jugador> jugadores, ArrayList<Casilla> casillas, int turno) {
         this.id = id;
         this.fecha = fecha;
@@ -30,62 +49,134 @@ public class Partida {
     }
 
 
+    /**
+     * Method to get the unique identifier of the partida.
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Method to set the unique identifier of the partida.
+     *
+     * @param id the unique identifier to set
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Method to get the date of the partida.
+     *
+     * @return the date of the partida
+     */
     public Date getFecha() {
         return fecha;
     }
 
+    /**
+     * Method to set the date of the partida.
+     *
+     * @param fecha the date to set
+     */
     public void setFecha(java.sql.Date fecha) {
         this.fecha = fecha;
     }
 
+    /**
+     * Method to get the deck of cards for drawing.
+     *
+     * @return the deck of cards for drawing
+     */
     public Baraja getMazoRobo() {
         return mazoRobo;
     }
 
+    /**
+     * Method to set the deck of cards for drawing.
+     *
+     * @param mazoRobo the deck of cards to set
+     */
     public void setMazoRobo(Baraja mazoRobo) {
         this.mazoRobo = mazoRobo;
     }
 
+    /**
+     * Method to get the deck of discarded cards.
+     *
+     * @return the deck of discarded cards
+     */
     public Baraja getMazoDescarte() {
         return mazoDescarte;
     }
 
+    /**
+     * Method to set the deck of discarded cards.
+     *
+     * @param mazoDescarte the deck of discarded cards to set
+     */
     public void setMazoDescarte(Baraja mazoDescarte) {
         this.mazoDescarte = mazoDescarte;
     }
 
+    /**
+     * Method to get the list of players in the partida.
+     *
+     * @return the list of players
+     */
     public ArrayList<Jugador> getJugadores() {
         return jugadores;
     }
 
+    /**
+     * Method to set the list of players in the partida.
+     *
+     * @param jugadores the list of players to set
+     */
     public void setJugadores(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
     }
 
+    /**
+     * Method to get the list of board squares in the partida.
+     *
+     * @return the list of board squares
+     */
     public ArrayList<Casilla> getCasillas() {
         return casillas;
     }
 
+    /**
+     * Method to set the list of board squares in the partida.
+     *
+     * @param casillas the list of board squares to set
+     */
     public void setCasillas(ArrayList<Casilla> casillas) {
         this.casillas = casillas;
     }
 
+    /**
+     * Method to get the current turn number.
+     *
+     * @return the current turn number
+     */
     public int getTurno() {
         return turno;
     }
 
+    /**
+     * Method to set the current turn number.
+     *
+     * @param turno the turn number to set
+     */
     public void setTurno(int turno) {
         this.turno = turno;
     }
 
+    /**
+     * Method to initialize the game board by reading from a file.
+     * It populates the casillas list with Normal, Esquina, and Suerte objects based on the file content.
+     */
     public void dibujarTablero(){
 
         casillas.sort(Comparator.comparingInt(Casilla::getPosicion));
@@ -228,6 +319,12 @@ public class Partida {
     }
 
 
+    /**
+     * Method to check if there is a winner in the game.
+     * If only one player remains, they are declared the winner.
+     *
+     * @return true if there is still a winner, false otherwise
+     */
     public boolean comprobarGanador() {
         if (jugadores.size()==1) {
             System.out.println("Felicidades "+jugadores.getFirst()+" has ganado");
@@ -237,10 +334,19 @@ public class Partida {
         return true;
     }
 
+    /**
+     * Method to change the turn to the next player.
+     * It increments the turno variable to switch to the next player in the list.
+     */
     public void cambiarTurno(){
         turno++;
     }
 
+    /**
+     * Method to handle the player's turn.
+     * It prompts the player to roll the dice, moves them, and applies effects based on the square they land on.
+     * It also allows players to perform actions like trading or building houses.
+     */
     public void turnos() {
         Scanner sc = new Scanner(System.in);
         Jugador jugador = jugadores.get(Math.floorMod(turno, jugadores.size()));
@@ -388,6 +494,13 @@ public class Partida {
     }
 
 
+    /**
+     * Method to handle the trading of properties between players.
+     * It allows players to trade money for a street, a street for money, or streets for streets.
+     *
+     * @param jugador1 the player initiating the trade
+     * @param jugador2 the player receiving the trade offer
+     */
     public void intercambiar1 (Jugador jugador1, Jugador jugador2){              //dinero por calle
         Scanner sc = new Scanner(System.in);
 
@@ -451,6 +564,13 @@ public class Partida {
     }
 
 
+    /**
+     * Method to handle the trading of properties between players.
+     * It allows players to trade a street for money.
+     *
+     * @param jugador1 the player initiating the trade
+     * @param jugador2 the player receiving the trade offer
+     */
     public void intercambiar2 (Jugador jugador1, Jugador jugador2){    //calle por dinero
         Scanner sc =new Scanner(System.in);
         int id_propiedad_ofrecida;
@@ -511,6 +631,13 @@ public class Partida {
     }
 
 
+    /**
+     * Method to handle the trading of properties between players.
+     * It allows players to trade a street for another street.
+     *
+     * @param jugador1 the player initiating the trade
+     * @param jugador2 the player receiving the trade offer
+     */
     public void intercambiar3 (Jugador jugador1, Jugador jugador2){           //calle por calle
         Scanner sc =new Scanner(System.in);
         int id_propiedad_ofrecida;
@@ -582,12 +709,21 @@ public class Partida {
 
     }
 
+    /**
+     * Method to simulate rolling a dice.
+     * It generates a random number between 1 and 6 (inclusive).
+     *
+     * @return the result of the dice roll
+     */
     public int tirarDado(){
         Random random = new Random();
         int dado = random.nextInt(1,7);
         return dado;
     }
 
+    /**
+     * Returns a string representation of the Partida object.
+     */
     @Override
     public String toString() {
         return "Partida{" +
