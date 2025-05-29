@@ -151,7 +151,7 @@ public class Normal extends Calle{
     @Override
     public String toString() {
         return "Normal{" +
-                super.getNombre()+
+                super.toString()+
                 ", color='" + color + '\'' +
                 '}';
     }
