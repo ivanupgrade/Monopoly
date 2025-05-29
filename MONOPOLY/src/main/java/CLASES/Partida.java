@@ -350,7 +350,7 @@ public class Partida {
         Scanner sc = new Scanner(System.in);
         Jugador jugador = jugadores.get(Math.floorMod(turno, jugadores.size()));
 
-        System.out.printf("Es el turno de %s: tienes %d%n", jugador.getNombre(), jugador.getDinero());
+        System.out.printf("Es el turno de %s: %n", jugador.getNombre());
         
         String respuesta = "";
         String nombre_calle;
@@ -386,16 +386,16 @@ public class Partida {
                     if (casilla.getPosicion() == jugador.getPosicion()) {
                         if (casilla instanceof Calle) {
                             nombre_calle = ((Calle) casilla).getNombre();
-                            System.out.println("Has caido en " + nombre_calle);
+                            System.out.println("Has caido en " + nombre_calle +". Tu saldo es de " + jugador.getDinero() + " dólares");
                             ((Calle) casilla).aplicarEfecto(jugador, this);
 
                         }else if (casilla instanceof Suerte) {
-                            System.out.println("Has caido en una casilla de suerte");
+                            System.out.println("Has caido en una casilla de suerte. Tu saldo es de" + jugador.getDinero() + " dólares");
                             ((Suerte) casilla).aplicarEfecto(jugador,this);
 
                         } else{
                             String tipo_casilla = ((Esquina) casilla).getTipo();
-                            System.out.println("Has caido en " + tipo_casilla);
+                            System.out.println("Has caido en " + tipo_casilla +". Tu saldo es de " + jugador.getDinero() + " dólares");
                             ((Esquina) casilla).aplicarEfecto(jugador,this);
 
                         }
@@ -463,6 +463,12 @@ public class Partida {
                 cambiarTurno();
 
             }else if (respuesta2==3){
+                if (jugador.getCalles().isEmpty()) {
+                    System.out.println("No dispones de ninguna calle para edificar");
+                    cambiarTurno();
+                    return;
+
+                }
                 while (true){
                     for (int i = 0; i < jugador.getCalles().size(); i++) {
                         if (jugador.getCalles().get(i) instanceof Normal){
