@@ -224,9 +224,9 @@ public class Partida {
         //Apartado para casas. Parte arriba
         for (int i = 0; i <= 7; i++) {
             if (casillas.get(i) instanceof Normal){
-                System.out.print("║"+colores.get(((Normal)casillas.get(i)).getColor())+" ".repeat(30)+reset);
+                System.out.print("║"+colores.get(((Normal)casillas.get(i)).getColor())+casillas.get(i).mostrarJugador(jugadores)+casillas.get(i).mostrarCasas()+reset);
             }else {
-                System.out.print("║"+colores.get("blanco")+" ".repeat(30)+reset);
+                System.out.print("║"+colores.get("blanco")+casillas.get(i).mostrarJugador(jugadores)+casillas.get(i).mostrarCasas()+reset);
             }
         }
         System.out.println("║");
@@ -263,13 +263,13 @@ public class Partida {
 
             //Zona casas (27–21 y 8–13)
             if (casillas.get(i) instanceof Normal){
-                System.out.print("║"+colores.get(((Normal)casillas.get(i)).getColor())+" ".repeat(30)+reset+"║");
+                System.out.print("║"+colores.get(((Normal)casillas.get(i)).getColor())+casillas.get(i).mostrarJugador(jugadores)+casillas.get(i).mostrarCasas()+reset+"║");
                 System.out.print(" ".repeat(185)+"║");
-                System.out.println(colores.get(((Normal)casillas.get(j)).getColor())+" ".repeat(30)+reset+"║");
+                System.out.println(colores.get(((Normal)casillas.get(j)).getColor())+casillas.get(j).mostrarJugador(jugadores)+casillas.get(j).mostrarCasas()+reset+"║");
             }else {
-                System.out.print("║"+colores.get("blanco")+" ".repeat(30)+reset+"║");
+                System.out.print("║"+colores.get("blanco")+casillas.get(i).mostrarJugador(jugadores)+casillas.get(i).mostrarCasas()+reset+"║");
                 System.out.print(" ".repeat(185)+"║");
-                System.out.println(colores.get("blanco")+" ".repeat(30)+reset+"║");
+                System.out.println(colores.get("blanco")+casillas.get(j).mostrarJugador(jugadores)+casillas.get(j).mostrarCasas()+reset+"║");
             }
 
             if (i!=21 && j!=13){
@@ -307,9 +307,9 @@ public class Partida {
         //Datos Casas(21-14)
         for (int i = 21; i >= 14; i--) {
             if (casillas.get(i) instanceof Normal){
-                System.out.print("║"+colores.get(((Normal)casillas.get(i)).getColor())+" ".repeat(30)+reset);
+                System.out.print("║"+colores.get(((Normal)casillas.get(i)).getColor())+casillas.get(i).mostrarJugador(jugadores)+casillas.get(i).mostrarCasas()+reset);
             }else {
-                System.out.print("║"+colores.get("blanco")+" ".repeat(30)+reset);
+                System.out.print("║"+colores.get("blanco")+casillas.get(i).mostrarJugador(jugadores)+casillas.get(i).mostrarCasas()+reset);
             }
         }
         System.out.println("║");
