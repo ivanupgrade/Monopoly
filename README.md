@@ -11,12 +11,14 @@ Monopoly Terminal es una versión del clásico juego de mesa Monopoly, diseñada
    Importa su contenido en tu servidor MySQL con el siguiente comando (desde consola o cliente GUI recomendado):
    ```bash
    mysql -u tu_usuario -p < nombre_archivo.sql
+   ```
    
 2. **Ejecutable Java**
    Descarga el archivo .jar del proyecto.
    Ejecuta el juego desde tu terminal con:
    ```bash
    java -jar MonopolyTerminal.jar
+   ```
 
 ## 📝 Recomendaciones
 
