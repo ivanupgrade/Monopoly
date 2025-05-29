@@ -466,7 +466,7 @@ public class Partida {
                 while (true){
                     for (int i = 0; i < jugador.getCalles().size(); i++) {
                         if (jugador.getCalles().get(i) instanceof Normal){
-                            System.out.printf("%d. %s: precio edificio: %d, numero de casas: %d", i, jugador.getCalles().get(i), ((Normal) jugador.getCalles().get(i)).getPrecioEdificio(), ((Normal) jugador.getCalles().get(i)).getNumCasas());
+                            System.out.printf("%d. %s: precio edificio: %d, numero de casas: %d%n", i, jugador.getCalles().get(i), ((Normal) jugador.getCalles().get(i)).getPrecioEdificio(), ((Normal) jugador.getCalles().get(i)).getNumCasas());
                         }
                     }
 
