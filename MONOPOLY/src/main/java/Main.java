@@ -127,6 +127,7 @@ public class Main {
         }
 
         partidaDAO.actualizar(partida);
+        partida.dibujarTablero();
 
         while (partida.comprobarGanador()){
             partida.turnos();

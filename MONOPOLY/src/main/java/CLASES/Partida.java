@@ -380,6 +380,8 @@ public class Partida {
 
                 jugador.mover(dado);
 
+                dibujarTablero();
+
                 for (Casilla casilla : casillas) {
                     if (casilla.getPosicion() == jugador.getPosicion()) {
                         if (casilla instanceof Calle) {
@@ -400,8 +402,6 @@ public class Partida {
                         break;
                     }
                 }
-
-                dibujarTablero();
 
                 if (jugador.getDinero()<=0) {
                     System.out.println(jugador.getNombre()+" te has quedado sin dinero, quedas eliminado de la partida");
