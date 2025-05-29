@@ -9,9 +9,6 @@ import java.util.HashMap;
  */
 public abstract class Casilla implements Efectos{
 
-    /**
-     * Position of the square on the board.
-     */
     private int posicion;
 
     /**
@@ -63,6 +60,11 @@ public abstract class Casilla implements Efectos{
         return colorAnsi + contenido + reset;
     }
 
+    /**
+     * Shows the players on the square in a formatted string.
+     * @param jugadores list of players in the game
+     * @return formatted string of players on the square
+     */
     public String mostrarJugador (ArrayList<Jugador> jugadores) {
         String contenido = "";
 
@@ -88,6 +90,9 @@ public abstract class Casilla implements Efectos{
         return contenido;
     }
 
+    /**
+     * shows the houses on the square in a formatted string.
+     */
     public String mostrarCasas (){
         String contenido = "";
         if (this instanceof Normal) {
@@ -108,7 +113,4 @@ public abstract class Casilla implements Efectos{
         contenido = String.format("%15s", contenido); // Rellena con espacios hasta 15 caracteres
         return contenido;
     }
-
-
-
 }

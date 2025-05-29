@@ -13,13 +13,11 @@ public class Suerte extends Casilla {
         super(posicion);
     }
 
-    /**
-     * Applies the effect of the Suerte square on the player.
-     * @param jugador the player on whom the effect is applied
-     * @param partida the current game instance
-     */
     @Override
     public void aplicarEfecto(Jugador jugador, Partida partida) {
+        if (partida.getMazoRobo().getBaraja().isEmpty()) {
+            partida.getMazoRobo().reponerBaraja(partida.getMazoDescarte());
+        }
         CartaSuerte carta = partida.getMazoRobo().robarCarta();
         carta.aplicarEfecto(jugador, partida);
         partida.getMazoDescarte().getBaraja().add(carta);

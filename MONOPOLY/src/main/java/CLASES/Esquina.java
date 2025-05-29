@@ -18,7 +18,7 @@ public class Esquina extends Casilla {
     }
 
     /**
-     * Default constructor for the Esquina class.
+     * returns the type of the corner square.
      */
     public String getTipo() {
         return tipo;
@@ -32,12 +32,7 @@ public class Esquina extends Casilla {
         this.tipo = tipo;
     }
 
-    /**
-     * Applies the effect of the corner square on the player.
-     * If the type is "ve_carcel", it sets the player's position to 7 and marks them as imprisoned.
-     * @param jugador the player affected by the corner square
-     * @param partida the game instance
-     */
+
     @Override
     public void aplicarEfecto(Jugador jugador, Partida partida) {
         if (tipo.equalsIgnoreCase("ve_carcel")){

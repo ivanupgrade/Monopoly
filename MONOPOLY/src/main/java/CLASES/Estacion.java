@@ -16,10 +16,6 @@ public class Estacion extends Calle{
         super(posicion, nombre, 25, precio, dueño);
     }
 
-    /**
-     * method to modify the rent of the station based on the number of stations owned by the player.
-     * @param jugador the player who owns the property
-     */
     @Override
     public void modificarAlquiler(Jugador jugador) {
         setAlquiler(25);

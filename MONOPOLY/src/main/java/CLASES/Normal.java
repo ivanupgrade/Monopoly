@@ -100,11 +100,7 @@ public class Normal extends Calle{
         this.tablaPrecios = tablaPrecios;
     }
 
-    /**
-     * Modifies the rent of the property based on the number of houses.
-     * This method updates the rent according to the price table defined for the property.
-     * @param jugador the player who owns the property
-     */
+
     @Override
     public void modificarAlquiler(Jugador jugador) {
         setAlquiler(tablaPrecios[numCasas]);

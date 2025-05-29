@@ -94,13 +94,7 @@ public abstract class Calle extends Casilla{
         this.dueño = dueño;
     }
 
-    /**
-     * Applies the effect of the property on the player.
-     * If the property is not owned, it offers the player to buy it.
-     * If it is owned, it charges rent to the player.
-     * @param jugador the player who landed on the property
-     * @param partida the game instance
-     */
+
     @Override
     public void aplicarEfecto(Jugador jugador, Partida partida) {
         if (!jugador.getCalles().contains(this)){

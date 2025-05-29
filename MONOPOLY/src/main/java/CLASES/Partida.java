@@ -174,8 +174,7 @@ public class Partida {
     }
 
     /**
-     * Method to initialize the game board by reading from a file.
-     * It populates the casillas list with Normal, Esquina, and Suerte objects based on the file content.
+     * Method to draw the game board with all the squares and players.
      */
     public void dibujarTablero(){
 
@@ -496,12 +495,12 @@ public class Partida {
 
     /**
      * Method to handle the trading of properties between players.
-     * It allows players to trade money for a street, a street for money, or streets for streets.
+     * It allows players to trade money for a street.
      *
      * @param jugador1 the player initiating the trade
      * @param jugador2 the player receiving the trade offer
      */
-    public void intercambiar1 (Jugador jugador1, Jugador jugador2){              //dinero por calle
+    public void intercambiar1 (Jugador jugador1, Jugador jugador2){
         Scanner sc = new Scanner(System.in);
 
         int dinero_ofrecido;
@@ -571,7 +570,7 @@ public class Partida {
      * @param jugador1 the player initiating the trade
      * @param jugador2 the player receiving the trade offer
      */
-    public void intercambiar2 (Jugador jugador1, Jugador jugador2){    //calle por dinero
+    public void intercambiar2 (Jugador jugador1, Jugador jugador2){
         Scanner sc =new Scanner(System.in);
         int id_propiedad_ofrecida;
         while (true){
@@ -638,7 +637,7 @@ public class Partida {
      * @param jugador1 the player initiating the trade
      * @param jugador2 the player receiving the trade offer
      */
-    public void intercambiar3 (Jugador jugador1, Jugador jugador2){           //calle por calle
+    public void intercambiar3 (Jugador jugador1, Jugador jugador2){
         Scanner sc =new Scanner(System.in);
         int id_propiedad_ofrecida;
         while (true){

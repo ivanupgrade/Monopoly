@@ -8,29 +8,31 @@ import java.util.Collections;
  * It contains methods to shuffle the deck, draw cards, and manage the deck.
  */
 public class Baraja {
-    /**
-     * The deck of cards represented as an ArrayList of CartaSuerte objects.
-     */
+
     private ArrayList<CartaSuerte> baraja;
+
     /**
      * Default constructor that initializes the deck with an empty list.
      */
     public Baraja(ArrayList<CartaSuerte> baraja) {
         this.baraja = baraja;
     }
+
     /**
      * Default constructor that initializes the deck with an empty list.
      */
     public ArrayList<CartaSuerte> getBaraja() {
         return baraja;
     }
+
     /**
      * Sets the deck of cards.
-     * @param baraja
+     * @param baraja the new deck of cards to set
      */
     public void setBaraja(ArrayList<CartaSuerte> baraja) {
         this.baraja = baraja;
     }
+
     /**
      * Shuffles the deck of cards.
      */
@@ -40,7 +42,7 @@ public class Baraja {
 
     /**
      * Replaces the current deck with a new one.
-     * @param baraja
+     * @param baraja the new deck of cards to replace the current one
      */
     public void reponerBaraja (Baraja baraja){
         this.baraja = baraja.getBaraja();
@@ -50,7 +52,7 @@ public class Baraja {
 
     /**
      * Returns and removes the first card from the deck.
-     * @return
+     * @return the first CartaSuerte object from the deck
      */
     public CartaSuerte robarCarta(){
         CartaSuerte carta;
