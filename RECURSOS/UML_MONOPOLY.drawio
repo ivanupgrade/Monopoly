@@ -1,21 +1,21 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.2 Chrome/134.0.6998.205 Electron/35.3.0 Safari/537.36" version="27.0.2">
   <diagram name="Página-1" id="XiR5am4uEXvmTYar8Qgd">
-    <mxGraphModel dx="1979" dy="2148" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2610" dy="2220" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="pmxXm__u79XP4FCr_Jww-42" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startSize=16;endArrow=none;endFill=0;endSize=16;" parent="1" source="Z4oVHTnzfggZo6-wI9r0-18" target="pmxXm__u79XP4FCr_Jww-25" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="700" y="-20" />
+              <mxPoint x="830" y="-245" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="Z4oVHTnzfggZo6-wI9r0-18" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Jugador&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;- id: int&lt;/p&gt;&lt;div&gt;&amp;nbsp;- p_ganadas: int&lt;/div&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- nombre: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- posicion: int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- dinero: int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- calles: ArrayList&amp;lt;Calle&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- encarcelado: boolean&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&amp;nbsp;+ Jugador()&lt;div&gt;&amp;nbsp;+ Jugador(nombre: String)&lt;br&gt;&lt;div&gt;&amp;nbsp;+ Jugador(*Todos atributos*)&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ mover(num: int)&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="600" y="75" width="180" height="205" as="geometry" />
+          <mxGeometry x="740" y="-100" width="180" height="205" as="geometry" />
         </mxCell>
         <mxCell id="Z4oVHTnzfggZo6-wI9r0-19" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CartaSuerte&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- tipo: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- valor: int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- descripcion: String&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ CartaSuerte()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ CartaSuerte (&lt;span style=&quot;background-color: initial;&quot;&gt;*todos atributos*&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;):&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ aplicarEfecto(jugador: Jugador, &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;partida: Partida): void&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="-330" y="50" width="220" height="170" as="geometry" />
+          <mxGeometry x="-520" y="40" width="320" height="170" as="geometry" />
         </mxCell>
         <mxCell id="XypUHvtR2X1Q9s0CAqDa-8" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startSize=16;endArrow=none;endFill=1;endSize=16;startArrow=diamond;startFill=0;" parent="1" source="Z4oVHTnzfggZo6-wI9r0-20" target="Z4oVHTnzfggZo6-wI9r0-19" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -26,10 +26,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="Z4oVHTnzfggZo6-wI9r0-20" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Baraja&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- baraja: Arraylist&amp;lt;CartaSuerte&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: initial; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ Baraja (baraja: ArrayList&amp;lt;CartaSuerte&amp;gt;)&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ barajar(): void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ reponerBaraja(baraja: Baraja): void&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ robarCarta (): CartaSuerte&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="-42.5" y="86.25" width="265" height="133.75" as="geometry" />
+          <mxGeometry x="-90" y="76.25" width="265" height="133.75" as="geometry" />
         </mxCell>
         <mxCell id="Z4oVHTnzfggZo6-wI9r0-21" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;Abstract&amp;gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Casilla&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- posicion: int&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Casilla (posicion: int)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ mostrar (colorAnsi: String): String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="253.5" y="318" width="321" height="110" as="geometry" />
+          <mxGeometry x="273" y="318" width="321" height="110" as="geometry" />
         </mxCell>
         <mxCell id="XypUHvtR2X1Q9s0CAqDa-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;endSize=16;startSize=16;" parent="1" source="Z4oVHTnzfggZo6-wI9r0-22" target="Z4oVHTnzfggZo6-wI9r0-21" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -115,8 +115,8 @@
         <mxCell id="XypUHvtR2X1Q9s0CAqDa-9" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startSize=16;endArrow=none;endFill=1;endSize=16;startArrow=diamond;startFill=0;" parent="1" source="_DOTibDQbM-wBAo8qjBx-1" target="Z4oVHTnzfggZo6-wI9r0-20" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="290" y="150" />
-              <mxPoint x="290" y="150" />
+              <mxPoint x="210" y="143" />
+              <mxPoint x="210" y="143" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -133,7 +133,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="_DOTibDQbM-wBAo8qjBx-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Partida&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- fecha: Date&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- mazoRobo: Baraja&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- mazoDescarte: Baraja&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- jugadores: ArrayList&amp;lt;Jugador&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- casillas: ArrayList&amp;lt;Casilla&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- turno: int&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Partida (fecha: Date)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Partida (*todos atributos*)&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ dibujarTablero(): void&lt;/p&gt;&lt;div&gt;&amp;nbsp;+ comprobarGanador(): boolean&lt;/div&gt;&lt;div&gt;&amp;nbsp;+&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;cambiarTurno(): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;+ turnos(): void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ intercambiar1 (jugador1: Jugador, &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;jugador2: Jugador) void&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ intercambiar2 (jugador1: Jugador,&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;jugador2: Jugador) void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ intercambiar3 (jugador1: Jugador,&amp;nbsp;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;jugador2: Jugador) void&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ tirarDado(): int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="300" y="-80" width="200" height="330" as="geometry" />
+          <mxGeometry x="253.5" y="-80" width="360" height="300" as="geometry" />
         </mxCell>
         <mxCell id="XypUHvtR2X1Q9s0CAqDa-12" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startSize=16;endArrow=none;endFill=0;endSize=16;dashed=1;dashPattern=8 8;startArrow=block;startFill=0;" parent="1" source="XypUHvtR2X1Q9s0CAqDa-1" target="Z4oVHTnzfggZo6-wI9r0-19" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -150,16 +150,16 @@
           <mxGeometry x="-380" y="318" width="320" height="90" as="geometry" />
         </mxCell>
         <mxCell id="XypUHvtR2X1Q9s0CAqDa-16" value="2..4" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
-          <mxGeometry x="570" y="138" width="40" height="30" as="geometry" />
+          <mxGeometry x="630" y="130" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="XypUHvtR2X1Q9s0CAqDa-18" value="2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
-          <mxGeometry x="222.5" y="118" width="30" height="30" as="geometry" />
+          <mxGeometry x="223.5" y="76.25" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="XypUHvtR2X1Q9s0CAqDa-19" value="0..29" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
-          <mxGeometry x="-120" y="118" width="50" height="30" as="geometry" />
+          <mxGeometry x="-150" y="110" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="XypUHvtR2X1Q9s0CAqDa-20" value="28..*" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
-          <mxGeometry x="365" y="288" width="50" height="30" as="geometry" />
+          <mxGeometry x="372.5" y="288" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="pmxXm__u79XP4FCr_Jww-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endSize=16;startSize=16;endArrow=block;endFill=0;dashed=1;dashPattern=8 8;" parent="1" source="pmxXm__u79XP4FCr_Jww-4" target="pmxXm__u79XP4FCr_Jww-5" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -169,10 +169,11 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="pmxXm__u79XP4FCr_Jww-53" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startSize=16;endArrow=none;endFill=0;endSize=16;entryX=0.55;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="pmxXm__u79XP4FCr_Jww-4" edge="1" target="Z4oVHTnzfggZo6-wI9r0-19">
+        <mxCell id="pmxXm__u79XP4FCr_Jww-53" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startSize=16;endArrow=none;endFill=0;endSize=16;entryX=0.55;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="pmxXm__u79XP4FCr_Jww-4" target="Z4oVHTnzfggZo6-wI9r0-19" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="-162" y="50" />
+              <mxPoint x="-162" y="-10" />
+              <mxPoint x="-344" y="-10" />
             </Array>
             <mxPoint x="-162.5" y="-50" as="targetPoint" />
           </mxGeometry>
@@ -204,35 +205,35 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="pmxXm__u79XP4FCr_Jww-22" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;PartidaDAOImpl&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ conn: Connection&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ PartidaDAOImpl (conn: Connection)&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ Insertar(partida: Partida): void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ obtener(id: int): Partida&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ obtenerTodos(): ArrayList&amp;lt;Partida&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ actualizar(partida: Partida): void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ eliminar (id: int): void&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
-          <mxGeometry x="432.5" y="-270" width="240" height="150" as="geometry" />
+          <mxGeometry x="450" y="-290" width="240" height="150" as="geometry" />
         </mxCell>
         <mxCell id="pmxXm__u79XP4FCr_Jww-40" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startSize=16;endArrow=none;endFill=0;endSize=16;entryX=0.215;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="pmxXm__u79XP4FCr_Jww-23" target="_DOTibDQbM-wBAo8qjBx-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="358" y="-100" />
+              <mxPoint x="331" y="-130" />
+              <mxPoint x="331" y="-130" />
             </Array>
             <mxPoint x="357.5" y="-90" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="pmxXm__u79XP4FCr_Jww-23" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;PartidaDAO&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ Insertar (partida: Partida): void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ obtener (id: int): Partida&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ obtenerTodos (): ArrayList&amp;lt;Partida&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ actualizar (partida: Partida): void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ eliminar (id: int): void&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
-          <mxGeometry x="142.5" y="-270" width="230" height="130" as="geometry" />
+          <mxGeometry x="135" y="-290" width="230" height="130" as="geometry" />
         </mxCell>
         <mxCell id="pmxXm__u79XP4FCr_Jww-56" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startSize=16;endArrow=none;endFill=0;endSize=16;" parent="1" source="pmxXm__u79XP4FCr_Jww-24" target="Z4oVHTnzfggZo6-wI9r0-18" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="800" y="174" />
-              <mxPoint x="800" y="174" />
+              <mxPoint x="1010" y="-30" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="pmxXm__u79XP4FCr_Jww-24" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;JugadorDAOImpl&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ conn: Connection&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ JugadorDAOImpl (conn: Connection)&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ insertar (jugador: Jugador): void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ obtener (id: int): Jugador&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ obtenerTodos (): ArrayList&amp;lt;Jugador&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ actualizar (jugador: Jugador): void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ eliminar (id: int): void&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
-          <mxGeometry x="845" y="98.75" width="255" height="150" as="geometry" />
+          <mxGeometry x="982.5" y="43.75" width="255" height="150" as="geometry" />
         </mxCell>
         <mxCell id="pmxXm__u79XP4FCr_Jww-43" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startSize=16;endArrow=none;endFill=0;endSize=16;startArrow=block;startFill=0;dashed=1;dashPattern=8 8;" parent="1" source="pmxXm__u79XP4FCr_Jww-25" target="pmxXm__u79XP4FCr_Jww-24" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="pmxXm__u79XP4FCr_Jww-25" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;JugadorDAO&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ insertar (jugador: Jugador): void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ obtener (id: int): Jugador&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ obtenerTodos (): ArrayList&amp;lt;Jugador&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ actualizar (jugador: Jugador): void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ eliminar (id: int): void&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
-          <mxGeometry x="860" y="-200" width="240" height="130" as="geometry" />
+          <mxGeometry x="990" y="-310" width="240" height="130" as="geometry" />
         </mxCell>
         <mxCell id="pmxXm__u79XP4FCr_Jww-57" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startSize=16;endArrow=none;endFill=0;endSize=16;" parent="1" source="pmxXm__u79XP4FCr_Jww-26" target="Z4oVHTnzfggZo6-wI9r0-27" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -243,13 +244,13 @@
         <mxCell id="pmxXm__u79XP4FCr_Jww-51" value="" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startSize=16;endArrow=none;endFill=0;endSize=16;startArrow=block;startFill=0;dashed=1;dashPattern=8 8;" parent="1" source="pmxXm__u79XP4FCr_Jww-27" target="pmxXm__u79XP4FCr_Jww-26" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1100" y="1065" />
-              <mxPoint x="1100" y="1055" />
+              <mxPoint x="1080" y="1055" />
+              <mxPoint x="1080" y="1055" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="pmxXm__u79XP4FCr_Jww-27" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;NormalDAO&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ obtener (id: int): Normal&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ obtenerTodos (): ArrayList&amp;lt;Normal&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ actualizar (normal: Normal): void&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ eliminar (id: int): void&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
-          <mxGeometry x="860" y="970" width="205" height="130" as="geometry" />
+          <mxGeometry x="862.5" y="970" width="205" height="130" as="geometry" />
         </mxCell>
         <mxCell id="pmxXm__u79XP4FCr_Jww-58" style="edgeStyle=orthogonalEdgeStyle;shape=connector;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;startSize=16;endArrow=none;endFill=0;endSize=16;" parent="1" source="pmxXm__u79XP4FCr_Jww-28" target="Z4oVHTnzfggZo6-wI9r0-25" edge="1">
           <mxGeometry relative="1" as="geometry">
