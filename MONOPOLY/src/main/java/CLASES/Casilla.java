@@ -1,5 +1,8 @@
 package CLASES;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public abstract class Casilla implements Efectos{
 
     private int posicion;
@@ -37,5 +40,53 @@ public abstract class Casilla implements Efectos{
         }
         return colorAnsi + contenido + reset;
     }
+
+    public String mostrarJugador (ArrayList<Jugador> jugadores) {
+        String contenido = "";
+
+        HashMap<Integer, String> fichaJugador = new HashMap<>();
+        fichaJugador.put(0, "J1 ");
+        fichaJugador.put(1, "J2 ");
+        fichaJugador.put(2, "J3 ");
+        fichaJugador.put(3, "J4 ");
+
+        for (int i = 0; i < jugadores.size(); i++) {
+            if (jugadores.get(i).getPosicion() == getPosicion()) {
+                contenido += fichaJugador.get(i)+" ";
+            }
+        }
+        // Cortamos a máximo 15 caracteres
+        if (contenido.length() > 15) {
+            contenido = contenido.substring(0, 15);
+
+        } else {
+            contenido = String.format("%-15s", contenido); // rellena con espacios
+        }
+
+        return contenido;
+    }
+
+    public String mostrarCasas (){
+        String contenido = "";
+        if (this instanceof Normal) {
+            int casas = ((Normal) this).getNumCasas();
+
+            if (casas == 5){
+                contenido = "$ "; // Emoji de hotel
+            } else  {
+                for (int i = 0; i < casas; i++) {
+                    contenido += "■ "; // Emoji de casa
+                }
+            }
+
+        } else {
+            contenido = " ".repeat(15); // Espacio para otras casillas
+        }
+
+        contenido = String.format("%15s", contenido); // Rellena con espacios hasta 15 caracteres
+        return contenido;
+    }
+
+
 
 }
