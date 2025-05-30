@@ -17,7 +17,7 @@ Monopoly Terminal es una versión del clásico juego de mesa Monopoly, diseñada
    Descarga el archivo .jar del proyecto.
    Ejecuta el juego desde tu terminal con:
    ```bash
-   java -jar MonopolyTerminal.jar
+   java -jar MONOPOLY-1.0.jar
    ```
 
 ## 📝 Recomendaciones
