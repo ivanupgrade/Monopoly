@@ -260,6 +260,9 @@ public class PartidaDAOImpl implements PartidaDAO{
                 pst3.setInt(4, jugador.getId());
                 pst3.setInt(5, partida.getId());
                 pst3.addBatch();
+
+                JugadorDAOImpl jugadorDAO = new JugadorDAOImpl();
+                jugadorDAO.actualizar(jugador);
             }
 
             //sql4

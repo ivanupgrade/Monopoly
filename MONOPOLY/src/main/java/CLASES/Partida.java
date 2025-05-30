@@ -390,7 +390,7 @@ public class Partida {
                             ((Calle) casilla).aplicarEfecto(jugador, this);
 
                         }else if (casilla instanceof Suerte) {
-                            System.out.println("Has caido en una casilla de suerte. Tu saldo es de" + jugador.getDinero() + " dólares");
+                            System.out.println("Has caido en una casilla de suerte. Tu saldo es de " + jugador.getDinero() + " dólares");
                             ((Suerte) casilla).aplicarEfecto(jugador,this);
 
                         } else{

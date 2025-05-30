@@ -167,7 +167,7 @@ INSERT INTO cartas (tipo, valor, descripcion) VALUES
 ('pagar', 50, 'Te multan por exceso de velocidad en Gran Via. Paga 50.'),
 ('veA', 17, 'Ve directamente a “Estacion de Delicias”. Si pasas por la salida, cobra 200.'),
 ('cobrar', 150, 'La ciudad te paga por obras en Paseo del Prado. Recibe 150.'),
-('pagar', 100, 'Has sido elegido presidente de la comunidad. Paga 100 a cada jugador.'),
+('pagar', 100, 'Has sido elegido presidente de la comunidad. Paga 100.'),
 ('veA', 27, 'Avanza hasta la calle “Paseo del Rey”. Si pasas por la salida, cobra 200.'),
 ('veA', -3, 'Retrocede tres casillas.'),
 ('veA', 21, 'Vas a la carcel por hacer botellon. Ve directamente sin pasar por la salida.'),
